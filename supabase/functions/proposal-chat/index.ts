@@ -6,78 +6,113 @@ const corsHeaders = {
 };
 
 const documentContent = `
-# FileMaster: Expediente Digital — Propuesta para AFPC Occidente
+# SAF+ Core de Servicios Financieros — Propuesta para FIAGC
 
 ## Información Principal:
-- **Cliente**: AFPC Occidente
-- **Solución**: FileMaster - Expediente Digital
-- **Empresa**: SYSDE / Gurunet
+- **Cliente**: FIAGC
+- **Solución**: SAF+ Core de Servicios Financieros Colaborativos
+- **Empresa**: SYSDE
 
-## Expediente Digital de SYSDE:
-SYSDE es experto en la digitalización de procesos empresariales a través de su plataforma de Expediente Digital, FileMaster. La solución permite diseñar, implementar y gestionar flujos de trabajo digitales adaptados a las necesidades de cada organización.
+## Plataforma SAF+:
+SYSDE ofrece a FIAGC su plataforma colaborativa SAF+ para la administración integral de servicios financieros. Una solución robusta, moderna y 100% web.
 
-### Flujos para AFPC Occidente:
-- **Flujo de Afiliación**: Digitalización completa del proceso de afiliación, desde la recepción de documentos hasta la aprobación y registro del afiliado.
-- **Procesos ISO**: Implementación de flujos que cumplan con los estándares ISO requeridos, garantizando trazabilidad y control documental.
-- **Flujos Adicionales**: Cualquier proceso que AFPC Occidente requiera digitalizar puede ser modelado e implementado en FileMaster.
+### Módulos incluidos:
 
-### Primer Flujo:
-SYSDE realizará la implementación del primer flujo digital para AFPC Occidente, configurado, personalizado y puesto en producción por el equipo de consultores de SYSDE.
+#### 1. Módulo de Préstamos:
+- Tipos de crédito: Consumo, Comercial, Hipotecario, Nómina, Puente, Retail
+- Configuración: tipo de crédito, rubros, componentes de cuota, configuración contable
+- Funcionalidades: desembolso con fecha valor, cuentas referenciadas, posposición de cuotas, grupo interés económico, refinanciamientos, carga de documentos
+- Recuperación: carga masiva de pagos, pagos con fecha valor, saldo a favor, no identificados, pago de nómina, cobranza
+- Cálculo de intereses basado en años de 360 o 365 días
+- Pagos con frecuencia mensual, bimensual, trimestral, semestral, anual o al vencimiento
 
-## Gestión de Flujos Digitales:
-- Diseño de flujos con etapas, decisiones y asignaciones automáticas
-- Expediente completo que centraliza documentos, historial y estados
-- Asignación y roles con permisos definidos
-- Estados automáticos que se actualizan conforme avanza el flujo
+#### 2. Módulo de Clientes:
+- Personas físicas y jurídicas
+- Cliente único, documentos digitales
+- Actividad económica, convenios nómina
+- Configuración de máscaras de identificación
 
-## Ciclo de Vida del Expediente:
-1. Creación: Ingreso del caso y documentos iniciales
-2. Procesamiento: Ejecución de etapas según el flujo definido
-3. Revisión: Validación y aprobación por supervisores
-4. Cierre: Resolución y archivo del expediente
+#### 3. Módulo de Cajas:
+- Depósitos y retiros, control de denominación
+- Cambios de cheques, compra/venta divisas
+- Pago depósitos a plazo, recolección servicios
+- Anulación/reversa, reportes de control
+- Parametrización de transacciones y montos por cajero
 
-## Trazabilidad y Control:
-- Bitácora completa con fecha, hora, usuario, detalle y resultados
-- Gestión documental: carga, almacenamiento y consulta
-- Historial cronológico de todas las acciones
-- Seguridad y permisos granulares por rol
+#### 4. Módulo Cuentas de Efectivo:
+- Tipos de saldo (Disponible, Reserva, Embargo)
+- Sobregiros, chequeras, registro de cuentas
+- Pago intereses a socios, transferencias
+- Cierre diario, devolución reservas, certificados
 
-## Roles:
-- **Supervisor**: Configura flujos, asigna casos, aprueba/rechaza decisiones
-- **Operador**: Ejecuta tareas, carga documentos, registra gestiones
-- **Auditor**: Acceso de lectura para revisión y cumplimiento ISO
+#### 5. Módulo de Contabilidad:
+- Registro contable automático
+- Catálogo contable, estados financieros
+- Asientos automáticos y manuales
+- Interfaz con todos los módulos
+- Envío de información a terceros
+
+#### 6. Módulo de Bancos / Tesorería:
+- Cuentas centralizadas, emisión de cheques
+- Transferencias propias y a terceros
+- Control de ingresos y egresos
+- Saldos de cuentas, diarios e históricos
+
+#### 7. Depósitos a Plazo:
+- Renovación automática, cancelación anticipada
+- Múltiples beneficiarios, administración por carteras
+- Sustitución de depósitos, flujos de caja
+
+#### 8. Módulo de Seguridad:
+- Perfiles de usuario, roles de trabajo
+- Permisos por objeto, vigencia contraseña
+- Catálogo de puestos, transacciones por usuario
+
+### APIs e Integraciones:
+- API REST para clientes, parámetros, préstamos y contabilidad
+- 100% web sin instalación
+- Apps móviles para pagos de créditos
+- Integración con buró de crédito y reportes regulatorios
+- KYC
+
+### Arquitectura:
+- Agnóstico al sistema operativo
+- Tecnología de punta
+- Intercomunicación con sistemas externos
+- Seguridad, rendimiento, mantenibilidad y escalabilidad
 
 ## Infraestructura ON-CLOUD:
 - Servidor: Microsoft Azure, 4 núcleos, 512 GB disco, 16 GB RAM
 - Servicios de Red: Respaldo mensual, 3 meses de retención
 
 ## Inversión Económica:
-| Suscripción Mensual para 20 usuarios | USD $999.00 |
-| Flujo adicional (creado por AFPC Occidente) | USD $99.00/mes |
+| Suscripción Mensual para 20 usuarios (8 módulos) | USD $2,499.00 |
+| Módulo adicional | USD $199.00/mes |
 
-### FileMaster Champions:
+### SAF+ Champions:
 - Acompañamiento experto: USD $30.00 por hora
 
 ### Incluido en la suscripción:
-- Licenciamiento de FileMaster
+- Licenciamiento SAF+ Core Financiero
 - 20 usuarios
+- 8 módulos financieros
 - Capacitación progresiva
 - Mantenimiento evolutivo
 - Infraestructura Azure
 - Consultor de acompañamiento
-- Implementación del primer flujo digital
 
 ### Método de Pago:
 Se factura el primer día hábil de cada mes. Contrato mínimo de tres años.
 
-## Cronograma (4 semanas):
+## Cronograma (6 semanas):
 | Etapa | Tarea |
 |-------|-------|
-| 0 | Creación de nueva instancia |
-| 1 | Implementación del primer flujo digital |
-| 2 | Ajustes de personalización al flujo |
-| 3 | Capacitación progresiva y técnica |
-| 4 | Acompañamiento post implementación |
+| 0 | Configuración de instancia y ambiente |
+| 1 | Implementación Seguridad y Clientes |
+| 2 | Implementación módulo Préstamos |
+| 3 | Cajas, Cuentas y Contabilidad |
+| 4 | Bancos, Depósitos a Plazo y Activos Fijos |
+| 5 | Capacitación y acompañamiento |
 
 ## Términos y Condiciones:
 - Precios en USD, no incluyen impuestos
@@ -99,7 +134,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `Eres un asistente especializado en la propuesta de FileMaster: Expediente Digital de SYSDE para AFPC Occidente. Responde preguntas sobre esta propuesta de manera clara, profesional y útil.
+    const systemPrompt = `Eres un asistente especializado en la propuesta del SAF+ Core de Servicios Financieros de SYSDE para FIAGC. Responde preguntas sobre esta propuesta de manera clara, profesional y útil.
 
 INFORMACIÓN DEL DOCUMENTO:
 ${documentContent}

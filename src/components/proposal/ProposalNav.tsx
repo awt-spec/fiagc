@@ -5,13 +5,12 @@ import sysdeLogoWhite from "@/assets/sysde-logo-white.png";
 
 const sections = [
   { label: "Plataforma", href: "#presentacion" },
-  { label: "Funcionalidades", href: "#modulos" },
+  { label: "Módulos", href: "#modulos" },
   { label: "Infraestructura", href: "#beneficios" },
   { label: "Visión", href: "#vision" },
   { label: "Inversión", href: "#propuesta" },
 ];
 
-// Sections with red/gradient background where TOC should be white
 const redSections = new Set(["#vision"]);
 
 const ProposalNav = () => {
