@@ -9,12 +9,12 @@ const fade = {
 };
 
 const timelineRows = [
-  { stage: "0", task: "Configuración de la instancia y ambiente", weeks: [true, false, false, false, false, false] },
-  { stage: "1", task: "Implementación módulos Seguridad y Clientes", weeks: [true, true, false, false, false, false] },
-  { stage: "2", task: "Implementación módulo Préstamos", weeks: [false, true, true, true, false, false] },
-  { stage: "3", task: "Implementación Cajas, Cuentas y Contabilidad", weeks: [false, false, false, true, true, false] },
-  { stage: "4", task: "Bancos, Depósitos a Plazo y Activos Fijos", weeks: [false, false, false, false, true, true] },
-  { stage: "5", task: "Capacitación y acompañamiento post-implementación", weeks: [false, false, false, false, true, true] },
+  { stage: "0", task: "Configuración de la instancia y ambiente", weeks: [true, false, false, false, false, false, false, false, false, false, false, false] },
+  { stage: "1", task: "Implementación módulos Seguridad y Clientes", weeks: [true, true, true, false, false, false, false, false, false, false, false, false] },
+  { stage: "2", task: "Implementación módulo Préstamos", weeks: [false, false, true, true, true, true, false, false, false, false, false, false] },
+  { stage: "3", task: "Implementación Cajas, Cuentas y Contabilidad", weeks: [false, false, false, false, false, true, true, true, false, false, false, false] },
+  { stage: "4", task: "Bancos, Depósitos a Plazo y Activos Fijos", weeks: [false, false, false, false, false, false, false, true, true, true, false, false] },
+  { stage: "5", task: "Capacitación y acompañamiento post-implementación", weeks: [false, false, false, false, false, false, false, false, false, true, true, true] },
 ];
 
 const VisionAndTimeline = () => (
