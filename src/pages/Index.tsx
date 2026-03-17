@@ -1,5 +1,6 @@
 import ProposalNav from "@/components/proposal/ProposalNav";
 import ProposalHero from "@/components/proposal/ProposalHero";
+import EmbedSection from "@/components/proposal/EmbedSection";
 import ExecutiveLetter from "@/components/proposal/ExecutiveLetter";
 import ModulesSection from "@/components/proposal/ModulesSection";
 import BenefitsAndInfra from "@/components/proposal/BenefitsAndInfra";
@@ -13,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <ProposalNav />
       <ProposalHero />
+      <EmbedSection />
       <div id="modulos">
         <ModulesSection />
       </div>
