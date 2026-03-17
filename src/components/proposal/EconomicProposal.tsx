@@ -9,11 +9,6 @@ const fade = (delay = 0) => ({
 });
 
 const EconomicProposal = () => {
-  const [annual, setAnnual] = useState(false);
-  const monthlyPrice = 2499;
-  const annualMonthly = Math.round(monthlyPrice * 0.9);
-  const annualTotal = annualMonthly * 12;
-
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container px-6 max-w-5xl">
@@ -25,20 +20,6 @@ const EconomicProposal = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Modalidad SaaS (Software as a Service) que permite a FIAGC acceder al SAF+ Core Financiero a través de un navegador web.
           </p>
-        </motion.div>
-
-        {/* Toggle */}
-        <motion.div {...fade(0.1)} className="flex items-center justify-center gap-4 mb-10">
-          <span className={`text-sm font-medium transition-colors ${!annual ? "text-foreground" : "text-muted-foreground"}`}>Mensual</span>
-          <button
-            onClick={() => setAnnual(!annual)}
-            className={`relative w-14 h-7 rounded-full transition-colors ${annual ? "bg-sysde-red" : "bg-border"}`}
-          >
-            <span className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-primary-foreground shadow transition-transform ${annual ? "translate-x-7" : ""}`} />
-          </button>
-          <span className={`text-sm font-medium transition-colors ${annual ? "text-foreground" : "text-muted-foreground"}`}>
-            Anual <span className="text-sysde-red font-bold">-10%</span>
-          </span>
         </motion.div>
 
         {/* Pricing Table */}
@@ -54,21 +35,13 @@ const EconomicProposal = () => {
             <div className="divide-y divide-border">
               <div className="grid grid-cols-3 text-center">
                 <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
-                  {annual ? "Suscripción Anual" : "Suscripción Mensual"}
+                  Suscripción Mensual
                 </div>
                 <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
                   20 usuarios + Core completo (8 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
-                  {annual ? (
-                    <div className="text-center">
-                      <span className="text-muted-foreground line-through text-sm mr-2">USD ${(monthlyPrice * 12).toLocaleString()}</span>
-                      <span className="text-foreground font-bold text-xl">USD ${annualTotal.toLocaleString()}</span>
-                      <p className="text-xs text-sysde-red font-medium mt-1">USD ${annualMonthly}/mes</p>
-                    </div>
-                  ) : (
-                    <span className="text-foreground font-bold text-xl">USD ${monthlyPrice.toLocaleString()}.00</span>
-                  )}
+                  <span className="text-foreground font-bold text-xl">USD $1,500.00</span>
                 </div>
               </div>
               <div className="grid grid-cols-3 text-center bg-muted/30">
