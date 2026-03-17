@@ -370,13 +370,15 @@ const modules = [
 const ORBIT_RADII = [140, 140, 140, 140, 195, 195, 195, 195]; // two rings
 const PLANET_SIZE = 56;
 
-function getPlanetPosition(index: number, total: number) {
+function getPlanetPosition(index: number, _total: number) {
   // Split into inner ring (0-3) and outer ring (4-7)
   const isOuter = index >= 4;
   const ringIndex = isOuter ? index - 4 : index;
   const ringTotal = 4;
-  const angle = (ringIndex / ringTotal) * 2 * Math.PI - Math.PI / 2;
-  const radius = isOuter ? 195 : 130;
+  // Offset outer ring by 45° so labels don't overlap
+  const offsetAngle = isOuter ? Math.PI / 4 : 0;
+  const angle = (ringIndex / ringTotal) * 2 * Math.PI - Math.PI / 2 + offsetAngle;
+  const radius = isOuter ? 205 : 130;
   return {
     x: Math.cos(angle) * radius,
     y: Math.sin(angle) * radius,
@@ -390,7 +392,7 @@ const SolarSystem = ({ onSelect }: { onSelect: (id: string) => void }) => {
     <div className="relative w-full flex items-center justify-center" style={{ height: 520 }}>
       {/* Orbit rings */}
       <div className="absolute rounded-full border border-dashed border-muted-foreground/15" style={{ width: 260, height: 260 }} />
-      <div className="absolute rounded-full border border-dashed border-muted-foreground/15" style={{ width: 390, height: 390 }} />
+      <div className="absolute rounded-full border border-dashed border-muted-foreground/15" style={{ width: 410, height: 410 }} />
 
       {/* Sun - SAF+ */}
       <motion.div
@@ -493,7 +495,7 @@ const DetailView = ({
           whileTap={{ scale: 0.95 }}
         >
           <X className="h-4 w-4" />
-          Volver al sistema solar
+          Volver a módulos
         </motion.button>
       </div>
 
