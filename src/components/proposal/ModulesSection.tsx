@@ -370,13 +370,15 @@ const modules = [
 const ORBIT_RADII = [140, 140, 140, 140, 195, 195, 195, 195]; // two rings
 const PLANET_SIZE = 56;
 
-function getPlanetPosition(index: number, total: number) {
+function getPlanetPosition(index: number, _total: number) {
   // Split into inner ring (0-3) and outer ring (4-7)
   const isOuter = index >= 4;
   const ringIndex = isOuter ? index - 4 : index;
   const ringTotal = 4;
-  const angle = (ringIndex / ringTotal) * 2 * Math.PI - Math.PI / 2;
-  const radius = isOuter ? 195 : 130;
+  // Offset outer ring by 45° so labels don't overlap
+  const offsetAngle = isOuter ? Math.PI / 4 : 0;
+  const angle = (ringIndex / ringTotal) * 2 * Math.PI - Math.PI / 2 + offsetAngle;
+  const radius = isOuter ? 205 : 130;
   return {
     x: Math.cos(angle) * radius,
     y: Math.sin(angle) * radius,
