@@ -5,6 +5,7 @@ import {
   Shield, ArrowDown, Settings2, X,
   RefreshCw, DollarSign, Receipt, Banknote,
   FolderSearch, Code2, Globe, MonitorSmartphone, Puzzle,
+  FileText, Send, Database, Lock, BarChart3, Smartphone, Link2, Workflow,
 } from "lucide-react";
 
 const fade = (delay = 0) => ({
@@ -548,21 +549,29 @@ const ModulesSection = () => {
         <motion.div {...fade(0.2)} className="mt-16">
           <h3 className="text-2xl font-bold text-foreground mb-2 text-center">APIs e Integraciones</h3>
           <p className="text-sm text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-            SAF+ se integra con los sistemas existentes de FIAGC mediante APIs REST y componentes embebibles.
+            SYSDE brinda todos los endpoints necesarios para que FIAGC integre SAF+ con sus sistemas actuales y futuros. Incluido en la suscripción.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Code2, title: "API REST", desc: "Endpoints seguros para clientes, parámetros, préstamos y contabilidad.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-purple))]" },
-              { icon: Globe, title: "100% Web", desc: "Funciona en cualquier navegador sin instalación. Responsive y adaptable.", color: "from-[hsl(var(--flow-teal))] to-[hsl(var(--flow-green))]" },
-              { icon: MonitorSmartphone, title: "Apps Móviles", desc: "Pagos de créditos y consultas desde aplicaciones móviles.", color: "from-[hsl(var(--flow-orange))] to-[hsl(var(--sysde-red))]" },
-              { icon: Puzzle, title: "Buró de Crédito", desc: "Integración con buró de crédito y reportes regulatorios.", color: "from-[hsl(var(--flow-purple))] to-[hsl(var(--flow-blue))]" },
+              { icon: Code2, title: "API REST Completa", desc: "Endpoints seguros para clientes, préstamos, cuentas, contabilidad y parámetros del sistema.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-purple))]" },
+              { icon: Globe, title: "100% Web", desc: "Acceso desde cualquier navegador sin instalación. Responsive y adaptable a cualquier dispositivo.", color: "from-[hsl(var(--flow-teal))] to-[hsl(var(--flow-green))]" },
+              { icon: MonitorSmartphone, title: "Apps Móviles", desc: "Pagos de créditos, consultas de saldos y notificaciones desde aplicaciones móviles.", color: "from-[hsl(var(--flow-orange))] to-[hsl(var(--sysde-red))]" },
+              { icon: Puzzle, title: "Buró de Crédito", desc: "Consulta y reporte automático al buró de crédito para análisis de riesgo.", color: "from-[hsl(var(--flow-purple))] to-[hsl(var(--flow-blue))]" },
+              { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática de reportes para entes reguladores y auditorías.", color: "from-[hsl(var(--flow-green))] to-[hsl(var(--flow-teal))]" },
+              { icon: Send, title: "Notificaciones", desc: "Envío de alertas por correo electrónico y SMS a clientes y usuarios internos.", color: "from-[hsl(var(--sysde-red))] to-[hsl(var(--flow-orange))]" },
+              { icon: Database, title: "Migración de Datos", desc: "Herramientas y endpoints para importación masiva de datos desde sistemas legacy.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-teal))]" },
+              { icon: Lock, title: "KYC / AML", desc: "Validación de identidad (Know Your Customer) y prevención de lavado de activos.", color: "from-[hsl(var(--flow-orange))] to-[hsl(var(--flow-purple))]" },
+              { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para dashboards y herramientas de análisis como Power BI o Tableau.", color: "from-[hsl(var(--flow-teal))] to-[hsl(var(--flow-blue))]" },
+              { icon: Smartphone, title: "Banca Digital", desc: "APIs para portales de autoservicio y banca en línea para clientes finales.", color: "from-[hsl(var(--flow-purple))] to-[hsl(var(--sysde-red))]" },
+              { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores de pago y pasarelas para cobros en línea.", color: "from-[hsl(var(--flow-green))] to-[hsl(var(--flow-orange))]" },
+              { icon: Workflow, title: "Webhooks & Eventos", desc: "Notificaciones en tiempo real ante eventos del sistema para integraciones automatizadas.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-green))]" },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 20, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="group relative p-5 rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.color} opacity-60 group-hover:opacity-100 transition-opacity`} />
