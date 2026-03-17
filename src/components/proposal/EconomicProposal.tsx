@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, CreditCard, FileCheck, Calendar, Shield, Infinity, Zap, HeadphonesIcon, Users, Star, Landmark } from "lucide-react";
+import { CheckCircle2, CreditCard, FileCheck, Calendar, Shield, Infinity, Zap, HeadphonesIcon, Users, Landmark } from "lucide-react";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 20 } as const,
@@ -22,76 +22,8 @@ const EconomicProposal = () => {
           </p>
         </motion.div>
 
-        {/* Pricing Table */}
-        <motion.div {...fade(0.15)} className="mb-12">
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="bg-sysde-red text-primary-foreground">
-              <div className="grid grid-cols-3 text-center">
-                <div className="px-4 py-4 font-semibold border-r border-primary-foreground/20">Concepto</div>
-                <div className="px-4 py-4 font-semibold border-r border-primary-foreground/20">Detalle</div>
-                <div className="px-4 py-4 font-semibold">Precio USD</div>
-              </div>
-            </div>
-            <div className="divide-y divide-border">
-              <div className="grid grid-cols-3 text-center">
-                <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
-                  Suscripción Mensual
-                </div>
-                <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  20 usuarios + Core completo (8 módulos)
-                </div>
-                <div className="px-4 py-4 flex items-center justify-center">
-                  <span className="text-foreground font-bold text-xl">USD $1,500.00</span>
-                </div>
-              </div>
-              <div className="grid grid-cols-3 text-center bg-muted/30">
-                <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
-                  Módulo adicional
-                </div>
-                <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  Cada módulo adicional fuera del core
-                </div>
-                <div className="px-4 py-4 flex items-center justify-center">
-                  <span className="text-foreground font-bold text-xl">USD $199.00</span>
-                  <span className="text-xs text-muted-foreground ml-1">/mes</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* SAF+ Champions */}
-        <motion.div {...fade(0.18)} className="mb-12">
-          <div className="p-6 rounded-2xl border-2 border-[hsl(var(--flow-orange)/0.3)] bg-[hsl(var(--flow-orange-light))] relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--flow-orange))] to-[hsl(var(--sysde-red))]" />
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-2xl bg-[hsl(var(--flow-orange))] flex items-center justify-center">
-                <Star className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <div>
-                <h4 className="font-bold text-foreground text-lg">SAF+ Champions</h4>
-                <p className="text-sm text-muted-foreground">Acompañamiento experto para tu equipo</p>
-              </div>
-            </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Nuestros <strong className="text-foreground">SAF+ Champions</strong> son consultores certificados que acompañan a tu equipo en la configuración y personalización de los módulos financieros.
-            </p>
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">$30</p>
-                <p className="text-xs text-muted-foreground">USD / hora</p>
-              </div>
-              <div className="w-px h-10 bg-border" />
-              <div className="text-sm text-muted-foreground">
-                <p className="font-medium text-foreground mb-1">Acompañamiento por hora</p>
-                <p className="text-xs">Un Champion te guía en la configuración, parametrización y puesta en marcha de cada módulo.</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Included */}
-        <motion.div {...fade(0.2)} className="mb-12">
+        {/* Included - Soporte Ilimitado */}
+        <motion.div {...fade(0.1)} className="mb-12">
           <div className="p-8 rounded-2xl border-2 border-sysde-red/20 bg-card relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-sysde" />
             <div className="flex items-center gap-3 mb-5">
@@ -126,6 +58,32 @@ const EconomicProposal = () => {
                   {item.text}
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Pricing Table */}
+        <motion.div {...fade(0.2)} className="mb-12">
+          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="bg-sysde-red text-primary-foreground">
+              <div className="grid grid-cols-3 text-center">
+                <div className="px-4 py-4 font-semibold border-r border-primary-foreground/20">Concepto</div>
+                <div className="px-4 py-4 font-semibold border-r border-primary-foreground/20">Detalle</div>
+                <div className="px-4 py-4 font-semibold">Precio USD</div>
+              </div>
+            </div>
+            <div>
+              <div className="grid grid-cols-3 text-center">
+                <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
+                  Suscripción Mensual
+                </div>
+                <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
+                  20 usuarios + Core completo (8 módulos)
+                </div>
+                <div className="px-4 py-4 flex items-center justify-center">
+                  <span className="text-foreground font-bold text-xl">USD $1,500.00</span>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
