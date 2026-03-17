@@ -93,15 +93,15 @@ const VisionAndTimeline = () => (
                   >
                     <td className="py-3 px-4 font-mono font-bold">{row.stage}</td>
                     <td className="py-3 px-4">{row.task}</td>
-                    {row.weeks.map((active, wi) => (
-                      <td key={wi} className="py-3 px-2 text-center">
+                    {row.months.map((active, mi) => (
+                      <td key={mi} className="py-3 px-4 text-center">
                         {active && (
                           <motion.div
-                            className={`w-6 h-2.5 rounded-full mx-auto ${i % 2 === 0 ? 'bg-primary-foreground' : 'bg-primary-foreground/50'}`}
+                            className={`h-3 rounded-full mx-auto ${i % 2 === 0 ? 'bg-primary-foreground' : 'bg-primary-foreground/50'}`}
                             initial={{ scaleX: 0 }}
                             whileInView={{ scaleX: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: i * 0.12 + wi * 0.08 }}
+                            transition={{ duration: 0.4, delay: i * 0.12 + mi * 0.1 }}
                           />
                         )}
                       </td>
