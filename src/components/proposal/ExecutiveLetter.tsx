@@ -91,18 +91,6 @@ const ExecutiveLetter = () => {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="p-6 rounded-xl bg-muted/50 border border-border"
-          >
-            <h4 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wider text-sysde-red">Arquitectura Moderna y Colaborativa</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              SAF+ es agnóstico al sistema operativo, utiliza tecnología de punta y arquitectura que permite intercomunicación con sistemas externos mediante APIs REST. La plataforma es 100% web, robusta en seguridad, rendimiento, mantenibilidad y escalabilidad. Incluye integración con buró de crédito, reportes regulatorios, KYC y aplicaciones móviles.
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </section>
