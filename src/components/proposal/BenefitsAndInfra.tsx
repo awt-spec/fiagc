@@ -53,7 +53,7 @@ const BenefitsAndInfra = () => {
             ON-CLOUD: Infraestructura Incluida
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Todo lo que necesitas para operar, desplegado en la nube de Microsoft Azure con respaldos y soporte incluido.
+            Todo lo que FIAGC necesita para operar, desplegado en la nube de Microsoft Azure con respaldos y soporte incluido.
           </p>
         </motion.div>
 
@@ -66,7 +66,6 @@ const BenefitsAndInfra = () => {
               onMouseLeave={() => setHoveredCard(null)}
               className="group relative rounded-2xl bg-card border border-border overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
             >
-              {/* Gradient header */}
               <div className={`h-2 bg-gradient-to-r ${s.color} transition-all duration-500 ${hoveredCard === i ? "h-3" : ""}`} />
               <div className="p-6">
                 <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center mb-4 transition-transform duration-500 ${hoveredCard === i ? "scale-110 rotate-3" : ""}`}>
@@ -101,7 +100,7 @@ const BenefitsAndInfra = () => {
             </div>
             <h4 className="font-bold text-foreground mb-3">Premisas</h4>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Si es necesaria la integración con sistemas de terceros, AFPC Occidente deberá plantearlos para que sean analizados por SYSDE y en común acuerdo definir dicha gestión y su precio.
+              Si es necesaria la integración con sistemas de terceros, FIAGC deberá plantearlos para que sean analizados por SYSDE y en común acuerdo definir dicha gestión y su precio.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Se incluye el acompañamiento por parte de un consultor que brindará respuesta a las consultas de los usuarios una vez implementada la solución.
@@ -113,7 +112,7 @@ const BenefitsAndInfra = () => {
             </div>
             <h4 className="font-bold text-foreground mb-3">Capacitación</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Se incluye la capacitación progresiva a los usuarios sobre el uso de los flujos descritos en la propuesta técnica y en general el uso de FileMaster.
+              Se incluye la capacitación progresiva a los usuarios sobre el uso de los módulos del SAF+ descritos en la propuesta técnica.
             </p>
           </motion.div>
         </div>

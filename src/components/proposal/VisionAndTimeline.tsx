@@ -9,11 +9,12 @@ const fade = {
 };
 
 const timelineRows = [
-  { stage: "0", task: "Creación de la nueva instancia", weeks: [true, false, false, false] },
-  { stage: "1", task: "Implementación del primer flujo digital", weeks: [true, true, false, false] },
-  { stage: "2", task: "Ajustes de personalización al flujo", weeks: [false, true, true, false] },
-  { stage: "3", task: "Capacitación progresiva y técnica", weeks: [false, false, true, true] },
-  { stage: "4", task: "Acompañamiento post implementación", weeks: [false, false, false, true] },
+  { stage: "0", task: "Configuración de la instancia y ambiente", weeks: [true, false, false, false, false, false] },
+  { stage: "1", task: "Implementación módulos Seguridad y Clientes", weeks: [true, true, false, false, false, false] },
+  { stage: "2", task: "Implementación módulo Préstamos", weeks: [false, true, true, true, false, false] },
+  { stage: "3", task: "Implementación Cajas, Cuentas y Contabilidad", weeks: [false, false, false, true, true, false] },
+  { stage: "4", task: "Bancos, Depósitos a Plazo y Activos Fijos", weeks: [false, false, false, false, true, true] },
+  { stage: "5", task: "Capacitación y acompañamiento post-implementación", weeks: [false, false, false, false, true, true] },
 ];
 
 const VisionAndTimeline = () => (
@@ -31,17 +32,17 @@ const VisionAndTimeline = () => (
           {
             icon: Rocket,
             title: "Time to Market",
-            desc: "Apoyar a AFPC Occidente a digitalizar sus procesos en muy corto plazo, con una plataforma probada que se adapta a sus necesidades específicas.",
+            desc: "Apoyar a FIAGC a modernizar su operación financiera en corto plazo, con una plataforma probada y adaptable a sus necesidades específicas.",
           },
           {
             icon: Target,
             title: "Foco en el Negocio",
-            desc: "Garantizar el Plan de Proyecto, permitiendo a AFPC Occidente focalizarse en sus factores clave de negocio mientras SYSDE gestiona la solución tecnológica.",
+            desc: "Garantizar el Plan de Proyecto, permitiendo a FIAGC focalizarse en sus factores clave de negocio mientras SYSDE gestiona la solución tecnológica.",
           },
           {
             icon: TrendingUp,
             title: "Crecimiento Eficiente",
-            desc: "Colaborar con AFPC Occidente para soportar el crecimiento de su negocio a través de flujos digitales robustos con la flexibilidad de adaptar las reglas de negocio.",
+            desc: "Colaborar con FIAGC para soportar el crecimiento de su negocio a través de un core financiero robusto con flexibilidad para adaptar las reglas de negocio.",
           },
         ].map((v, i) => (
           <motion.div
@@ -70,7 +71,7 @@ const VisionAndTimeline = () => (
         <h3 className="text-2xl font-bold mb-6 text-center">Cronograma de Implementación</h3>
         <div className="overflow-x-auto rounded-xl bg-primary-foreground/10 p-[2px]">
           <div className="rounded-xl bg-primary-foreground/5 backdrop-blur p-1">
-            <table className="w-full min-w-[500px] text-sm">
+            <table className="w-full min-w-[600px] text-sm">
               <thead>
                 <tr className="border-b border-primary-foreground/20">
                   <th className="text-left py-3 px-4 font-semibold opacity-70">Etapa</th>
@@ -79,6 +80,8 @@ const VisionAndTimeline = () => (
                   <th className="text-center py-3 px-2 font-semibold">S2</th>
                   <th className="text-center py-3 px-2 font-semibold">S3</th>
                   <th className="text-center py-3 px-2 font-semibold">S4</th>
+                  <th className="text-center py-3 px-2 font-semibold">S5</th>
+                  <th className="text-center py-3 px-2 font-semibold">S6</th>
                 </tr>
               </thead>
               <tbody>
@@ -119,7 +122,7 @@ const VisionAndTimeline = () => (
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
         >
-          Implementación ON-CLOUD — 4 semanas estimadas
+          Implementación ON-CLOUD — 6 semanas estimadas
         </motion.p>
       </motion.div>
     </div>

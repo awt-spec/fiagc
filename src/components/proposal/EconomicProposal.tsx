@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, CreditCard, FileCheck, Calendar, Shield, Infinity, Zap, HeadphonesIcon, Workflow, Star, Users } from "lucide-react";
+import { CheckCircle2, CreditCard, FileCheck, Calendar, Shield, Infinity, Zap, HeadphonesIcon, Users, Star, Landmark } from "lucide-react";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 20 } as const,
@@ -11,23 +11,20 @@ const fade = (delay = 0) => ({
 
 const EconomicProposal = () => {
   const [annual, setAnnual] = useState(false);
-  const monthlyPrice = 999;
+  const monthlyPrice = 2499;
   const annualMonthly = Math.round(monthlyPrice * 0.9);
   const annualTotal = annualMonthly * 12;
 
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container px-6 max-w-5xl">
-        <motion.div
-          {...fade()}
-          className="text-center mb-16"
-        >
+        <motion.div {...fade()} className="text-center mb-16">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-sysde-red mb-2">Inversión</h2>
           <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
             Inversión Económica
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Modalidad SaaS (Software as a Service) que permite a AFPC Occidente acceder a FileMaster a través de un navegador web y una conexión a Internet.
+            Modalidad SaaS (Software as a Service) que permite a FIAGC acceder al SAF+ Core Financiero a través de un navegador web.
           </p>
         </motion.div>
 
@@ -61,7 +58,7 @@ const EconomicProposal = () => {
                   {annual ? "Suscripción Anual" : "Suscripción Mensual"}
                 </div>
                 <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  20 usuarios + 1 flujo digital incluido
+                  20 usuarios + Core completo (8 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
                   {annual ? (
@@ -77,13 +74,13 @@ const EconomicProposal = () => {
               </div>
               <div className="grid grid-cols-3 text-center bg-muted/30">
                 <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
-                  Flujo adicional
+                  Módulo adicional
                 </div>
                 <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  Cada flujo adicional creado por AFPC Occidente
+                  Cada módulo adicional fuera del core
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
-                  <span className="text-foreground font-bold text-xl">USD $99.00</span>
+                  <span className="text-foreground font-bold text-xl">USD $199.00</span>
                   <span className="text-xs text-muted-foreground ml-1">/mes</span>
                 </div>
               </div>
@@ -91,7 +88,7 @@ const EconomicProposal = () => {
           </div>
         </motion.div>
 
-        {/* FileMaster Champions */}
+        {/* SAF+ Champions */}
         <motion.div {...fade(0.18)} className="mb-12">
           <div className="p-6 rounded-2xl border-2 border-[hsl(var(--flow-orange)/0.3)] bg-[hsl(var(--flow-orange-light))] relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--flow-orange))] to-[hsl(var(--sysde-red))]" />
@@ -100,12 +97,12 @@ const EconomicProposal = () => {
                 <Star className="h-5 w-5 text-primary-foreground" />
               </div>
               <div>
-                <h4 className="font-bold text-foreground text-lg">FileMaster Champions</h4>
-                <p className="text-sm text-muted-foreground">Diseña tus propios flujos con apoyo experto</p>
+                <h4 className="font-bold text-foreground text-lg">SAF+ Champions</h4>
+                <p className="text-sm text-muted-foreground">Acompañamiento experto para tu equipo</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              AFPC Occidente puede diseñar y configurar sus propios flujos digitales sin depender del equipo de SYSDE. Nuestros <strong className="text-foreground">FileMaster Champions</strong> son consultores certificados que acompañan a tu equipo en la creación de flujos personalizados.
+              Nuestros <strong className="text-foreground">SAF+ Champions</strong> son consultores certificados que acompañan a tu equipo en la configuración y personalización de los módulos financieros.
             </p>
             <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
               <div className="text-center">
@@ -115,13 +112,13 @@ const EconomicProposal = () => {
               <div className="w-px h-10 bg-border" />
               <div className="text-sm text-muted-foreground">
                 <p className="font-medium text-foreground mb-1">Acompañamiento por hora</p>
-                <p className="text-xs">Un Champion te guía en el diseño, configuración y puesta en marcha de cada flujo que tu equipo cree.</p>
+                <p className="text-xs">Un Champion te guía en la configuración, parametrización y puesta en marcha de cada módulo.</p>
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Soporte, Capacitación y Evolución Ilimitados */}
+        {/* Included */}
         <motion.div {...fade(0.2)} className="mb-12">
           <div className="p-8 rounded-2xl border-2 border-sysde-red/20 bg-card relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-sysde" />
@@ -136,14 +133,14 @@ const EconomicProposal = () => {
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                { icon: Zap, text: "Licenciamiento de FileMaster" },
+                { icon: Zap, text: "Licenciamiento SAF+ Core Financiero" },
                 { icon: Users, text: "20 usuarios incluidos" },
                 { icon: HeadphonesIcon, text: "Capacitación progresiva ilimitada" },
                 { icon: Shield, text: "Mantenimiento evolutivo ilimitado" },
                 { icon: CheckCircle2, text: "Infraestructura en la nube (Azure)" },
                 { icon: CheckCircle2, text: "Soporte y acompañamiento ilimitado" },
                 { icon: CheckCircle2, text: "Acceso web desde cualquier navegador" },
-                { icon: Workflow, text: "1 flujo digital incluido en la suscripción" },
+                { icon: Landmark, text: "8 módulos financieros incluidos" },
               ].map((item, i) => (
                 <motion.div
                   key={item.text}
@@ -161,13 +158,9 @@ const EconomicProposal = () => {
           </div>
         </motion.div>
 
-        {/* Payment + Terms Grid */}
+        {/* Payment + Terms */}
         <div className="grid sm:grid-cols-2 gap-6">
-          {/* Método de Pago */}
-          <motion.div
-            {...fade(0.25)}
-            className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow"
-          >
+          <motion.div {...fade(0.25)} className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-[hsl(var(--flow-blue-light))] flex items-center justify-center">
                 <CreditCard className="h-5 w-5 text-[hsl(var(--flow-blue))]" />
@@ -186,7 +179,7 @@ const EconomicProposal = () => {
                 <FileCheck className="h-4 w-4 text-sysde-red mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-foreground">Contrato mínimo</p>
-                  <p className="text-xs text-muted-foreground">Tres (3) años para la renta de FileMaster e infraestructura Azure.</p>
+                  <p className="text-xs text-muted-foreground">Tres (3) años para la renta del SAF+ e infraestructura Azure.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-xl bg-muted/50">
@@ -199,11 +192,7 @@ const EconomicProposal = () => {
             </div>
           </motion.div>
 
-          {/* Términos */}
-          <motion.div
-            {...fade(0.3)}
-            className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow"
-          >
+          <motion.div {...fade(0.3)} className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-[hsl(var(--flow-orange-light))] flex items-center justify-center">
                 <FileCheck className="h-5 w-5 text-[hsl(var(--flow-orange))]" />
@@ -213,7 +202,7 @@ const EconomicProposal = () => {
             <div className="space-y-3">
               {[
                 { title: "Impuestos", desc: "Los precios no incluyen impuestos, tasas ni retenciones." },
-                { title: "Vigencia", desc: "Contrato mínimo de tres años para la renta de FileMaster." },
+                { title: "Vigencia", desc: "Contrato mínimo de tres años para la renta del SAF+." },
                 { title: "Modificaciones", desc: "Se realizarán mediante orden de cambio con cotización independiente." },
                 { title: "Viáticos", desc: "Gastos de viaje no incluidos; deben indicarse en negociación." },
                 { title: "Validez", desc: "Esta propuesta anula cualquier otra entregada anteriormente." },
