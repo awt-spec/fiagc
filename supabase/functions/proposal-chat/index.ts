@@ -104,7 +104,7 @@ SYSDE ofrece a FIAGC su plataforma colaborativa SAF+ para la administración int
 ### Método de Pago:
 Se factura el primer día hábil de cada mes. Contrato mínimo de tres años.
 
-## Cronograma (6 semanas):
+## Cronograma (3 meses / 12 semanas):
 | Etapa | Tarea |
 |-------|-------|
 | 0 | Configuración de instancia y ambiente |
