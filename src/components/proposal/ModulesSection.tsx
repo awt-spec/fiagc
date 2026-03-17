@@ -5,6 +5,7 @@ import {
   Shield, ArrowDown, Settings2, X,
   RefreshCw, DollarSign, Receipt, Banknote,
   FolderSearch, Code2, Globe, MonitorSmartphone, Puzzle,
+  FileText, Send, Database, Lock, BarChart3, Smartphone, Link2, Workflow,
 } from "lucide-react";
 
 const fade = (delay = 0) => ({
