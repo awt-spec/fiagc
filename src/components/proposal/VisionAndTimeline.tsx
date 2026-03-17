@@ -71,7 +71,7 @@ const VisionAndTimeline = () => (
         <h3 className="text-2xl font-bold mb-6 text-center">Cronograma de Implementación</h3>
         <div className="overflow-x-auto rounded-xl bg-primary-foreground/10 p-[2px]">
           <div className="rounded-xl bg-primary-foreground/5 backdrop-blur p-1">
-            <table className="w-full min-w-[600px] text-sm">
+            <table className="w-full min-w-[700px] text-sm">
               <thead>
                 <tr className="border-b border-primary-foreground/20">
                   <th className="text-left py-3 px-4 font-semibold opacity-70">Etapa</th>
@@ -82,6 +82,12 @@ const VisionAndTimeline = () => (
                   <th className="text-center py-3 px-2 font-semibold">S4</th>
                   <th className="text-center py-3 px-2 font-semibold">S5</th>
                   <th className="text-center py-3 px-2 font-semibold">S6</th>
+                  <th className="text-center py-3 px-2 font-semibold">S7</th>
+                  <th className="text-center py-3 px-2 font-semibold">S8</th>
+                  <th className="text-center py-3 px-2 font-semibold">S9</th>
+                  <th className="text-center py-3 px-2 font-semibold">S10</th>
+                  <th className="text-center py-3 px-2 font-semibold">S11</th>
+                  <th className="text-center py-3 px-2 font-semibold">S12</th>
                 </tr>
               </thead>
               <tbody>
