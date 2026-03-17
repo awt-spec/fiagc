@@ -392,7 +392,7 @@ const SolarSystem = ({ onSelect }: { onSelect: (id: string) => void }) => {
     <div className="relative w-full flex items-center justify-center" style={{ height: 520 }}>
       {/* Orbit rings */}
       <div className="absolute rounded-full border border-dashed border-muted-foreground/15" style={{ width: 260, height: 260 }} />
-      <div className="absolute rounded-full border border-dashed border-muted-foreground/15" style={{ width: 390, height: 390 }} />
+      <div className="absolute rounded-full border border-dashed border-muted-foreground/15" style={{ width: 410, height: 410 }} />
 
       {/* Sun - SAF+ */}
       <motion.div
