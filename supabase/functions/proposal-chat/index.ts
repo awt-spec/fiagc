@@ -86,7 +86,7 @@ SYSDE ofrece a FIAGC su plataforma colaborativa SAF+ para la administración int
 - Servicios de Red: Respaldo mensual, 3 meses de retención
 
 ## Inversión Económica:
-| Suscripción Mensual para 20 usuarios (8 módulos) | USD $2,499.00 |
+| Suscripción Mensual para 20 usuarios (8 módulos) | USD $1,500.00 |
 | Módulo adicional | USD $199.00/mes |
 
 ### SAF+ Champions:
