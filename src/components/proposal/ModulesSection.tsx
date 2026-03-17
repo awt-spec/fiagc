@@ -289,27 +289,26 @@ const modules = [
 ];
 
 const integrations = [
-  { icon: Code2, title: "API REST", desc: "Endpoints seguros para clientes, préstamos, cuentas, contabilidad y parámetros.", category: "core", color: "flow-blue" },
-  { icon: Globe, title: "100% Web", desc: "Acceso desde cualquier navegador sin instalación. Responsive y adaptable.", category: "core", color: "flow-teal" },
+  { icon: Code2, title: "API REST", desc: "Endpoints seguros para clientes, préstamos, cuentas, contabilidad y parámetros.", category: "plataforma", color: "flow-blue" },
+  { icon: Globe, title: "100% Web", desc: "Acceso desde cualquier navegador sin instalación. Responsive y adaptable.", category: "plataforma", color: "flow-teal" },
+  { icon: Workflow, title: "Webhooks & Eventos", desc: "Notificaciones en tiempo real ante eventos del sistema para automatizaciones.", category: "plataforma", color: "flow-blue" },
+  { icon: Database, title: "Migración de Datos", desc: "Herramientas para importación masiva desde sistemas legacy.", category: "plataforma", color: "flow-purple" },
   { icon: MonitorSmartphone, title: "Apps Móviles", desc: "Pagos de créditos, consultas de saldos y notificaciones push.", category: "canales", color: "flow-orange" },
-  { icon: Puzzle, title: "Buró de Crédito", desc: "Consulta y reporte automático para análisis de riesgo crediticio.", category: "riesgo", color: "flow-purple" },
-  { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática para entes reguladores y auditorías.", category: "cumplimiento", color: "flow-green" },
+  { icon: Smartphone, title: "Banca Digital", desc: "Portales de autoservicio y banca en línea para clientes finales.", category: "canales", color: "flow-purple" },
   { icon: Send, title: "Notificaciones", desc: "Alertas por correo electrónico y SMS a clientes y usuarios internos.", category: "canales", color: "sysde-red" },
-  { icon: Database, title: "Migración de Datos", desc: "Importación masiva de datos desde sistemas legacy.", category: "core", color: "flow-blue" },
-  { icon: Lock, title: "KYC / AML", desc: "Validación de identidad y prevención de lavado de activos.", category: "riesgo", color: "flow-orange" },
-  { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para Power BI, Tableau y dashboards.", category: "analytics", color: "flow-teal" },
-  { icon: Smartphone, title: "Banca Digital", desc: "APIs para portales de autoservicio y banca en línea.", category: "canales", color: "flow-purple" },
-  { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores y pasarelas para cobros en línea.", category: "core", color: "flow-green" },
-  { icon: Workflow, title: "Webhooks & Eventos", desc: "Notificaciones en tiempo real para integraciones automatizadas.", category: "core", color: "flow-blue" },
+  { icon: Puzzle, title: "Buró de Crédito", desc: "Consulta y reporte automático para análisis de riesgo crediticio.", category: "integraciones", color: "flow-purple" },
+  { icon: Lock, title: "KYC / AML", desc: "Validación de identidad y prevención de lavado de activos.", category: "integraciones", color: "flow-orange" },
+  { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática para entes reguladores y auditorías.", category: "integraciones", color: "flow-green" },
+  { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores y pasarelas para cobros en línea.", category: "integraciones", color: "flow-green" },
+  { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para Power BI, Tableau y dashboards.", category: "integraciones", color: "flow-teal" },
+  { icon: Settings2, title: "Otros", desc: "Integraciones adicionales según necesidades específicas de FIAGC. Sujetas a análisis y cotización.", category: "integraciones", color: "sysde-blue" },
 ];
 
 const categories = [
   { id: "all", label: "Todos" },
-  { id: "core", label: "Core" },
+  { id: "plataforma", label: "Plataforma" },
   { id: "canales", label: "Canales" },
-  { id: "riesgo", label: "Riesgo" },
-  { id: "cumplimiento", label: "Cumplimiento" },
-  { id: "analytics", label: "Analytics" },
+  { id: "integraciones", label: "Integraciones" },
 ];
 
 const IntegrationsHub = () => {
