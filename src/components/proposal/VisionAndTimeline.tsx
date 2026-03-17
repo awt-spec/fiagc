@@ -9,12 +9,12 @@ const fade = {
 };
 
 const timelineRows = [
-  { stage: "0", task: "Configuración de la instancia y ambiente", weeks: [true, false, false, false, false, false, false, false, false, false, false, false] },
-  { stage: "1", task: "Implementación módulos Seguridad y Clientes", weeks: [true, true, true, false, false, false, false, false, false, false, false, false] },
-  { stage: "2", task: "Implementación módulo Préstamos", weeks: [false, false, true, true, true, true, false, false, false, false, false, false] },
-  { stage: "3", task: "Implementación Cajas, Cuentas y Contabilidad", weeks: [false, false, false, false, false, true, true, true, false, false, false, false] },
-  { stage: "4", task: "Bancos, Depósitos a Plazo y Activos Fijos", weeks: [false, false, false, false, false, false, false, true, true, true, false, false] },
-  { stage: "5", task: "Capacitación y acompañamiento post-implementación", weeks: [false, false, false, false, false, false, false, false, false, true, true, true] },
+  { stage: "0", task: "Configuración de la instancia y ambiente", months: [true, false, false] },
+  { stage: "1", task: "Implementación módulos Seguridad y Clientes", months: [true, false, false] },
+  { stage: "2", task: "Implementación módulo Préstamos", months: [true, true, false] },
+  { stage: "3", task: "Implementación Cajas, Cuentas y Contabilidad", months: [false, true, false] },
+  { stage: "4", task: "Bancos, Depósitos a Plazo y Activos Fijos", months: [false, true, true] },
+  { stage: "5", task: "Capacitación y acompañamiento post-implementación", months: [false, false, true] },
 ];
 
 const VisionAndTimeline = () => (
@@ -71,23 +71,14 @@ const VisionAndTimeline = () => (
         <h3 className="text-2xl font-bold mb-6 text-center">Cronograma de Implementación</h3>
         <div className="overflow-x-auto rounded-xl bg-primary-foreground/10 p-[2px]">
           <div className="rounded-xl bg-primary-foreground/5 backdrop-blur p-1">
-            <table className="w-full min-w-[700px] text-sm">
+            <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-primary-foreground/20">
                   <th className="text-left py-3 px-4 font-semibold opacity-70">Etapa</th>
                   <th className="text-left py-3 px-4 font-semibold opacity-70">Tarea</th>
-                  <th className="text-center py-3 px-2 font-semibold">S1</th>
-                  <th className="text-center py-3 px-2 font-semibold">S2</th>
-                  <th className="text-center py-3 px-2 font-semibold">S3</th>
-                  <th className="text-center py-3 px-2 font-semibold">S4</th>
-                  <th className="text-center py-3 px-2 font-semibold">S5</th>
-                  <th className="text-center py-3 px-2 font-semibold">S6</th>
-                  <th className="text-center py-3 px-2 font-semibold">S7</th>
-                  <th className="text-center py-3 px-2 font-semibold">S8</th>
-                  <th className="text-center py-3 px-2 font-semibold">S9</th>
-                  <th className="text-center py-3 px-2 font-semibold">S10</th>
-                  <th className="text-center py-3 px-2 font-semibold">S11</th>
-                  <th className="text-center py-3 px-2 font-semibold">S12</th>
+                  <th className="text-center py-3 px-4 font-semibold">Mes 1</th>
+                  <th className="text-center py-3 px-4 font-semibold">Mes 2</th>
+                  <th className="text-center py-3 px-4 font-semibold">Mes 3</th>
                 </tr>
               </thead>
               <tbody>
@@ -102,15 +93,15 @@ const VisionAndTimeline = () => (
                   >
                     <td className="py-3 px-4 font-mono font-bold">{row.stage}</td>
                     <td className="py-3 px-4">{row.task}</td>
-                    {row.weeks.map((active, wi) => (
-                      <td key={wi} className="py-3 px-2 text-center">
+                    {row.months.map((active, mi) => (
+                      <td key={mi} className="py-3 px-4 text-center">
                         {active && (
                           <motion.div
-                            className={`w-6 h-2.5 rounded-full mx-auto ${i % 2 === 0 ? 'bg-primary-foreground' : 'bg-primary-foreground/50'}`}
+                            className={`h-3 rounded-full mx-auto ${i % 2 === 0 ? 'bg-primary-foreground' : 'bg-primary-foreground/50'}`}
                             initial={{ scaleX: 0 }}
                             whileInView={{ scaleX: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: i * 0.12 + wi * 0.08 }}
+                            transition={{ duration: 0.4, delay: i * 0.12 + mi * 0.1 }}
                           />
                         )}
                       </td>
