@@ -6,6 +6,7 @@ import {
   RefreshCw, DollarSign, Receipt, Banknote,
   FolderSearch, Code2, Globe, MonitorSmartphone, Puzzle,
   FileText, Send, Database, Lock, BarChart3, Smartphone, Link2, Workflow,
+  ChevronRight, Terminal, Braces,
 } from "lucide-react";
 
 const fade = (delay = 0) => ({
@@ -287,6 +288,127 @@ const modules = [
   },
 ];
 
+const integrations = [
+  { icon: Code2, title: "API REST", desc: "Endpoints seguros para clientes, préstamos, cuentas, contabilidad y parámetros.", category: "core", color: "flow-blue" },
+  { icon: Globe, title: "100% Web", desc: "Acceso desde cualquier navegador sin instalación. Responsive y adaptable.", category: "core", color: "flow-teal" },
+  { icon: MonitorSmartphone, title: "Apps Móviles", desc: "Pagos de créditos, consultas de saldos y notificaciones push.", category: "canales", color: "flow-orange" },
+  { icon: Puzzle, title: "Buró de Crédito", desc: "Consulta y reporte automático para análisis de riesgo crediticio.", category: "riesgo", color: "flow-purple" },
+  { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática para entes reguladores y auditorías.", category: "cumplimiento", color: "flow-green" },
+  { icon: Send, title: "Notificaciones", desc: "Alertas por correo electrónico y SMS a clientes y usuarios internos.", category: "canales", color: "sysde-red" },
+  { icon: Database, title: "Migración de Datos", desc: "Importación masiva de datos desde sistemas legacy.", category: "core", color: "flow-blue" },
+  { icon: Lock, title: "KYC / AML", desc: "Validación de identidad y prevención de lavado de activos.", category: "riesgo", color: "flow-orange" },
+  { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para Power BI, Tableau y dashboards.", category: "analytics", color: "flow-teal" },
+  { icon: Smartphone, title: "Banca Digital", desc: "APIs para portales de autoservicio y banca en línea.", category: "canales", color: "flow-purple" },
+  { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores y pasarelas para cobros en línea.", category: "core", color: "flow-green" },
+  { icon: Workflow, title: "Webhooks & Eventos", desc: "Notificaciones en tiempo real para integraciones automatizadas.", category: "core", color: "flow-blue" },
+];
+
+const categories = [
+  { id: "all", label: "Todos" },
+  { id: "core", label: "Core" },
+  { id: "canales", label: "Canales" },
+  { id: "riesgo", label: "Riesgo" },
+  { id: "cumplimiento", label: "Cumplimiento" },
+  { id: "analytics", label: "Analytics" },
+];
+
+const IntegrationsHub = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  const filtered = activeCategory === "all"
+    ? integrations
+    : integrations.filter((i) => i.category === activeCategory);
+
+  return (
+    <motion.div {...fade(0.2)} className="relative">
+      {/* Header with tech accent */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div className="flex items-center gap-2 mb-2">
+            <Terminal className="h-4 w-4 text-[hsl(var(--flow-blue))]" />
+            <span className="text-xs font-mono text-[hsl(var(--flow-blue))] tracking-wider uppercase">api.saf+.fiagc</span>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground">APIs e Integraciones</h3>
+          <p className="text-sm text-muted-foreground mt-1 max-w-lg">
+            Todos los endpoints necesarios incluidos en la suscripción.
+          </p>
+        </div>
+
+        {/* Category filter pills */}
+        <div className="flex flex-wrap gap-1.5">
+          {categories.map((cat) => (
+            <motion.button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              whileTap={{ scale: 0.95 }}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
+                activeCategory === cat.id
+                  ? "bg-[hsl(var(--sysde-dark))] text-primary-foreground border-transparent"
+                  : "bg-card text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground"
+              }`}
+            >
+              {cat.label}
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
+      {/* Interactive grid */}
+      <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <AnimatePresence mode="popLayout">
+          {filtered.map((item, i) => (
+            <motion.div
+              key={item.title}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3, delay: i * 0.04 }}
+              onMouseEnter={() => setHoveredIdx(i)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              className="group relative rounded-xl border border-border bg-card p-4 cursor-default overflow-hidden transition-all duration-300 hover:border-[hsl(var(--${item.color})/0.5)] hover:shadow-lg"
+            >
+              {/* Animated gradient line */}
+              <motion.div
+                className={`absolute top-0 left-0 h-[2px] bg-[hsl(var(--${item.color}))]`}
+                initial={{ width: "0%" }}
+                animate={{ width: hoveredIdx === i ? "100%" : "0%" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              />
+
+              <div className="flex items-start gap-3">
+                <div className={`w-9 h-9 rounded-lg bg-[hsl(var(--${item.color})/0.1)] border border-[hsl(var(--${item.color})/0.2)] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className={`h-4 w-4 text-[hsl(var(--${item.color}))]`} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-1">
+                    <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
+                    <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/0 group-hover:text-muted-foreground transition-all duration-300 group-hover:translate-x-0 -translate-x-1" />
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+
+              {/* Category badge */}
+              <div className="mt-3 flex items-center gap-1.5">
+                <Braces className="h-3 w-3 text-muted-foreground/40" />
+                <span className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">{item.category}</span>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Bottom note */}
+      <motion.div {...fade(0.3)} className="mt-6 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+        <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--flow-green))] animate-pulse" />
+        <span>Integraciones con terceros requieren análisis y cotización independiente</span>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 /* ─── Main Section ─── */
 
 const ModulesSection = () => {
@@ -355,45 +477,8 @@ const ModulesSection = () => {
                 ))}
               </div>
 
-              {/* APIs Section */}
-              <motion.div {...fade(0.2)}>
-                <h3 className="text-2xl font-bold text-foreground mb-2 text-center">APIs e Integraciones</h3>
-                <p className="text-sm text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-                  SYSDE brinda todos los endpoints necesarios para que FIAGC integre SAF+ con sus sistemas actuales y futuros. Incluido en la suscripción.
-                </p>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {[
-                    { icon: Code2, title: "API REST Completa", desc: "Endpoints seguros para clientes, préstamos, cuentas, contabilidad y parámetros del sistema.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-purple))]" },
-                    { icon: Globe, title: "100% Web", desc: "Acceso desde cualquier navegador sin instalación. Responsive y adaptable a cualquier dispositivo.", color: "from-[hsl(var(--flow-teal))] to-[hsl(var(--flow-green))]" },
-                    { icon: MonitorSmartphone, title: "Apps Móviles", desc: "Pagos de créditos, consultas de saldos y notificaciones desde aplicaciones móviles.", color: "from-[hsl(var(--flow-orange))] to-[hsl(var(--sysde-red))]" },
-                    { icon: Puzzle, title: "Buró de Crédito", desc: "Consulta y reporte automático al buró de crédito para análisis de riesgo.", color: "from-[hsl(var(--flow-purple))] to-[hsl(var(--flow-blue))]" },
-                    { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática de reportes para entes reguladores y auditorías.", color: "from-[hsl(var(--flow-green))] to-[hsl(var(--flow-teal))]" },
-                    { icon: Send, title: "Notificaciones", desc: "Envío de alertas por correo electrónico y SMS a clientes y usuarios internos.", color: "from-[hsl(var(--sysde-red))] to-[hsl(var(--flow-orange))]" },
-                    { icon: Database, title: "Migración de Datos", desc: "Herramientas y endpoints para importación masiva de datos desde sistemas legacy.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-teal))]" },
-                    { icon: Lock, title: "KYC / AML", desc: "Validación de identidad (Know Your Customer) y prevención de lavado de activos.", color: "from-[hsl(var(--flow-orange))] to-[hsl(var(--flow-purple))]" },
-                    { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para dashboards y herramientas de análisis como Power BI o Tableau.", color: "from-[hsl(var(--flow-teal))] to-[hsl(var(--flow-blue))]" },
-                    { icon: Smartphone, title: "Banca Digital", desc: "APIs para portales de autoservicio y banca en línea para clientes finales.", color: "from-[hsl(var(--flow-purple))] to-[hsl(var(--sysde-red))]" },
-                    { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores de pago y pasarelas para cobros en línea.", color: "from-[hsl(var(--flow-green))] to-[hsl(var(--flow-orange))]" },
-                    { icon: Workflow, title: "Webhooks & Eventos", desc: "Notificaciones en tiempo real ante eventos del sistema para integraciones automatizadas.", color: "from-[hsl(var(--flow-blue))] to-[hsl(var(--flow-green))]" },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                      viewport={{ once: true, margin: "-40px" }}
-                      transition={{ duration: 0.4, delay: i * 0.06 }}
-                      className="group relative p-5 rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                    >
-                      <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.color} opacity-60 group-hover:opacity-100 transition-opacity`} />
-                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-3`}>
-                        <item.icon className="h-5 w-5 text-primary-foreground" />
-                      </div>
-                      <h4 className="font-semibold text-foreground text-sm mb-1">{item.title}</h4>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+              {/* APIs Section - Interactive Tech Style */}
+              <IntegrationsHub />
             </motion.div>
           )}
         </AnimatePresence>
