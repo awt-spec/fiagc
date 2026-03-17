@@ -493,7 +493,7 @@ const DetailView = ({
           whileTap={{ scale: 0.95 }}
         >
           <X className="h-4 w-4" />
-          Volver al sistema solar
+          Volver a módulos
         </motion.button>
       </div>
 
