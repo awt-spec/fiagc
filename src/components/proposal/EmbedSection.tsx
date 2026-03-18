@@ -14,7 +14,7 @@ const EmbedSection = () => {
           className="text-center mb-10"
         >
           <h2 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--sysde-red))] mb-2">
-            Simulador
+            Mapa Funcional
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
             Plataforma en acción

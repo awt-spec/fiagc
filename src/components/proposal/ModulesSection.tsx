@@ -443,32 +443,89 @@ const ModulesSection = () => {
             >
               {/* Header */}
               <motion.div {...fade()} className="mb-14">
-                <h2 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--sysde-red))] mb-2">Plataforma</h2>
+                <h2 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--sysde-red))] mb-2">Alcance</h2>
                 <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-                  SAF+ Core de Servicios Financieros
+                  Módulos a Rentar
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-3xl">
-                  SYSDE ofrece a FIAGC su plataforma colaborativa SAF+ para la administración integral de servicios financieros. Una solución robusta, moderna y 100% web que cubre préstamos, captación, tesorería, contabilidad y más.
+                  Los módulos a ser implementados en FIAGC de la solución SYSDE SAF+, son los que a continuación se detallan.
                 </p>
               </motion.div>
 
-              {/* Card Grid */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-                {modules.map((m, i) => (
-                  <motion.button
-                    key={m.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    onClick={() => setSelectedModule(m.id)}
-                    className="group text-left p-7 rounded-2xl border border-border bg-card hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              {/* Alcance Hub - 4 quadrants */}
+              <div className="relative mb-16">
+                {/* Central badge */}
+                <div className="hidden md:flex absolute inset-0 items-center justify-center z-10 pointer-events-none">
+                  <div className="w-24 h-24 rounded-full bg-card border-2 border-[hsl(var(--sysde-red))] shadow-xl flex items-center justify-center">
+                    <span className="text-[hsl(var(--sysde-red))] font-bold text-lg tracking-tight">SAF+</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Administrativos */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="rounded-2xl bg-[hsl(var(--sysde-red))] text-primary-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setSelectedModule("clientes")}
                   >
-                    <m.icon className="h-7 w-7 text-[hsl(var(--sysde-red))] mb-5" />
-                    <h4 className="font-bold text-foreground text-lg mb-3">{m.label}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{m.summary}</p>
-                  </motion.button>
-                ))}
+                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Administrativos</h4>
+                    <ol className="space-y-1.5 text-sm opacity-90">
+                      <li>1. Administración de Seguridad</li>
+                      <li>2. Políticas de Negocio</li>
+                      <li>3. Administración de Clientes</li>
+                      <li>4. Módulo de Contabilidad General</li>
+                      <li>5. Gestor de cobro</li>
+                    </ol>
+                  </motion.div>
+
+                  {/* Colocación */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="rounded-2xl bg-[hsl(var(--sysde-red))] text-primary-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() => setSelectedModule("prestamos")}
+                  >
+                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Colocación</h4>
+                    <ol className="space-y-1.5 text-sm opacity-90">
+                      <li>1. Administración de Préstamos</li>
+                      <li className="ml-4">a. Créditos</li>
+                      <li className="ml-4">b. Líneas de crédito</li>
+                    </ol>
+                  </motion.div>
+
+                  {/* Tesorería */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="rounded-2xl bg-muted text-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow border border-border"
+                    onClick={() => setSelectedModule("bancos")}
+                  >
+                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Tesorería</h4>
+                    <ol className="space-y-1.5 text-sm text-muted-foreground">
+                      <li>1. Administración Bancos</li>
+                      <li>2. Administración de Cajas</li>
+                    </ol>
+                  </motion.div>
+
+                  {/* Captación */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="rounded-2xl bg-muted text-foreground p-6 border border-border"
+                  >
+                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Captación</h4>
+                    <p className="text-sm text-muted-foreground">1. No Aplica</p>
+                  </motion.div>
+                </div>
               </div>
 
               {/* APIs Section - Interactive Tech Style */}
