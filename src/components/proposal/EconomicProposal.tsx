@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, CreditCard, FileCheck, Calendar, Shield, Infinity, Zap, HeadphonesIcon, Users, Landmark } from "lucide-react";
+import { CheckCircle2, CreditCard, FileCheck, Calendar, Shield, Infinity, Zap, HeadphonesIcon, Users, Landmark, TrendingUp } from "lucide-react";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 20 } as const,
@@ -7,6 +7,12 @@ const fade = (delay = 0) => ({
   viewport: { once: true, margin: "-60px" } as const,
   transition: { duration: 0.5, delay },
 });
+
+const MONTHLY_YEAR1 = 1500;
+const INCREASE = 0.10;
+const MONTHLY_YEAR2 = MONTHLY_YEAR1 * (1 + INCREASE);
+
+const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 
 const EconomicProposal = () => {
   return (
@@ -38,7 +44,9 @@ const EconomicProposal = () => {
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: Zap, text: "Licenciamiento SAF+ Core Financiero" },
-                { icon: Users, text: "20 usuarios incluidos" },
+                { icon: Users, text: "Usuarios ilimitados" },
+                { icon: CheckCircle2, text: "Empresas ilimitadas" },
+                { icon: CheckCircle2, text: "Créditos ilimitados" },
                 { icon: HeadphonesIcon, text: "Capacitación progresiva ilimitada" },
                 { icon: Shield, text: "Mantenimiento evolutivo ilimitado" },
                 { icon: CheckCircle2, text: "Infraestructura en la nube (Azure)" },
@@ -78,7 +86,7 @@ const EconomicProposal = () => {
                   Suscripción Mensual
                 </div>
                 <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  20 usuarios + Core completo (8 módulos)
+                  Usuarios, empresas y créditos ilimitados + Core completo (8 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
                   <span className="text-foreground font-bold text-xl">USD $1,500.00</span>
@@ -86,11 +94,63 @@ const EconomicProposal = () => {
               </div>
             </div>
           </div>
+          <div className="flex items-center justify-center gap-2 mt-3 text-xs text-muted-foreground">
+            <TrendingUp className="h-3.5 w-3.5 text-sysde-red" />
+            <span>Aumento del 10% anual sobre la suscripción mensual</span>
+          </div>
+        </motion.div>
+
+        {/* Payment Timeline - 24 months */}
+        <motion.div {...fade(0.25)} className="mb-12">
+          <h4 className="text-xl font-bold text-foreground text-center mb-2">Cronograma de Pagos</h4>
+          <p className="text-sm text-muted-foreground text-center mb-6">Referencia de pagos mensuales para los primeros 24 meses</p>
+
+          <div className="space-y-6">
+            {/* Year 1 */}
+            <div className="overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="bg-[hsl(var(--sysde-dark))] text-primary-foreground px-5 py-3 flex items-center justify-between">
+                <span className="font-semibold text-sm">Año 1</span>
+                <span className="text-xs opacity-80">USD ${MONTHLY_YEAR1.toLocaleString("en-US", { minimumFractionDigits: 2 })} / mes</span>
+              </div>
+              <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 divide-x divide-y divide-border">
+                {months.map((m, i) => (
+                  <div key={`y1-${i}`} className="px-2 py-3 text-center">
+                    <span className="block text-[10px] text-muted-foreground font-medium uppercase mb-1">{m}</span>
+                    <span className="block text-xs font-semibold text-foreground">${MONTHLY_YEAR1.toLocaleString()}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="px-5 py-3 bg-muted/50 border-t border-border flex items-center justify-between">
+                <span className="text-sm font-medium text-muted-foreground">Total Año 1</span>
+                <span className="text-sm font-bold text-foreground">USD ${(MONTHLY_YEAR1 * 12).toLocaleString("en-US", { minimumFractionDigits: 2 })}</span>
+              </div>
+            </div>
+
+            {/* Year 2 */}
+            <div className="overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="bg-sysde-red text-primary-foreground px-5 py-3 flex items-center justify-between">
+                <span className="font-semibold text-sm">Año 2 <span className="text-xs opacity-80 ml-1">(+10%)</span></span>
+                <span className="text-xs opacity-80">USD ${MONTHLY_YEAR2.toLocaleString("en-US", { minimumFractionDigits: 2 })} / mes</span>
+              </div>
+              <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 divide-x divide-y divide-border">
+                {months.map((m, i) => (
+                  <div key={`y2-${i}`} className="px-2 py-3 text-center">
+                    <span className="block text-[10px] text-muted-foreground font-medium uppercase mb-1">{m}</span>
+                    <span className="block text-xs font-semibold text-foreground">${MONTHLY_YEAR2.toLocaleString("en-US", { minimumFractionDigits: 2 })}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="px-5 py-3 bg-muted/50 border-t border-border flex items-center justify-between">
+                <span className="text-sm font-medium text-muted-foreground">Total Año 2</span>
+                <span className="text-sm font-bold text-foreground">USD ${(MONTHLY_YEAR2 * 12).toLocaleString("en-US", { minimumFractionDigits: 2 })}</span>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Payment + Terms */}
         <div className="grid sm:grid-cols-2 gap-6">
-          <motion.div {...fade(0.25)} className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
+          <motion.div {...fade(0.3)} className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-[hsl(var(--flow-blue-light))] flex items-center justify-center">
                 <CreditCard className="h-5 w-5 text-[hsl(var(--flow-blue))]" />
@@ -122,7 +182,7 @@ const EconomicProposal = () => {
             </div>
           </motion.div>
 
-          <motion.div {...fade(0.3)} className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
+          <motion.div {...fade(0.35)} className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-[hsl(var(--flow-orange-light))] flex items-center justify-center">
                 <FileCheck className="h-5 w-5 text-[hsl(var(--flow-orange))]" />

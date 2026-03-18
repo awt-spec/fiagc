@@ -452,20 +452,13 @@ const ModulesSection = () => {
                 </p>
               </motion.div>
 
-              {/* Alcance Hub - 4 quadrants */}
+              {/* Alcance Hub - 3 quadrants */}
               <div className="relative mb-16">
-                {/* Central badge */}
-                <div className="hidden md:flex absolute inset-0 items-center justify-center z-10 pointer-events-none">
-                  <div className="w-24 h-24 rounded-full bg-card border-2 border-[hsl(var(--sysde-red))] shadow-xl flex items-center justify-center">
-                    <span className="text-[hsl(var(--sysde-red))] font-bold text-lg tracking-tight">SAF+</span>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {/* Administrativos */}
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                     className="rounded-2xl bg-[hsl(var(--sysde-red))] text-primary-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow"
@@ -483,10 +476,10 @@ const ModulesSection = () => {
 
                   {/* Colocación */}
                   <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                     className="rounded-2xl bg-[hsl(var(--sysde-red))] text-primary-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow"
                     onClick={() => setSelectedModule("prestamos")}
                   >
@@ -500,10 +493,10 @@ const ModulesSection = () => {
 
                   {/* Tesorería */}
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                     className="rounded-2xl bg-muted text-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow border border-border"
                     onClick={() => setSelectedModule("bancos")}
                   >
@@ -512,18 +505,6 @@ const ModulesSection = () => {
                       <li>1. Administración Bancos</li>
                       <li>2. Administración de Cajas</li>
                     </ol>
-                  </motion.div>
-
-                  {/* Captación */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="rounded-2xl bg-muted text-foreground p-6 border border-border"
-                  >
-                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Captación</h4>
-                    <p className="text-sm text-muted-foreground">1. No Aplica</p>
                   </motion.div>
                 </div>
               </div>
