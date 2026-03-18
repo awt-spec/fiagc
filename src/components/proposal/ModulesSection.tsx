@@ -317,7 +317,7 @@ const IntegrationsHub = () => {
 
   const filtered = activeCategory === "all"
     ? integrations
-    : integrations.filter((i) => i.category === activeCategory);
+    : integrations.filter((i) => i.category === activeCategory || i.title === "Otros");
 
   return (
     <motion.div {...fade(0.2)} className="relative">
