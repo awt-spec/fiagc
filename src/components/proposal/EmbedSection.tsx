@@ -42,17 +42,17 @@ const EmbedSection = () => {
             <div className="flex-1 flex justify-center">
               <div className="flex items-center gap-2 px-4 py-1 rounded-lg bg-background border border-border text-xs text-muted-foreground font-mono">
                 <ExternalLink className="h-3 w-3" />
-                mfprestamos.lovable.app
+                learn-pages-spark.lovable.app
               </div>
             </div>
           </div>
 
           {/* Iframe */}
           <iframe
-            src="https://mfprestamos.lovable.app"
+            src="https://learn-pages-spark.lovable.app"
             className="w-full border-0"
             style={{ height: "80vh" }}
-            title="MF Préstamos - Demo interactiva"
+            title="Demo interactiva"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
           />
         </motion.div>
