@@ -399,11 +399,6 @@ const IntegrationsHub = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* Bottom note */}
-      <motion.div {...fade(0.3)} className="mt-6 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-        <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--flow-green))] animate-pulse" />
-        <span>Integraciones con terceros requieren análisis y cotización independiente</span>
-      </motion.div>
     </motion.div>
   );
 };
