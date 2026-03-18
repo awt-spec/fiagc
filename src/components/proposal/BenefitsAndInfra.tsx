@@ -112,18 +112,6 @@ const BenefitsAndInfra = () => {
           </div>
         </div>
 
-        {/* Integration premise */}
-        <motion.div {...fade} className="p-6 rounded-2xl border border-border bg-muted/50 flex items-start gap-4">
-          <div className="w-10 h-10 rounded-xl bg-[hsl(var(--flow-blue-light))] flex items-center justify-center shrink-0">
-            <Lock className="h-5 w-5 text-[hsl(var(--flow-blue))]" />
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground text-sm mb-1">Premisas de Integración</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Si es necesaria la integración con sistemas de terceros, FIAGC deberá plantearlos para que sean analizados por SYSDE y en común acuerdo definir dicha gestión y su cotización. Se incluye acompañamiento de un consultor para responder consultas una vez implementada la solución.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
