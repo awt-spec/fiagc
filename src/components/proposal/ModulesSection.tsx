@@ -452,59 +452,92 @@ const ModulesSection = () => {
                 </p>
               </motion.div>
 
-              {/* Alcance Hub - 3 quadrants */}
-              <div className="relative mb-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Alcance Hub - Professional structured layout */}
+              <div className="mb-16 space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                  className="flex justify-center mb-2"
+                >
+                  <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[hsl(var(--sysde-red))] text-primary-foreground text-sm font-bold shadow-lg">
+                    <Shield className="h-4 w-4" />
+                    SAF+ — Módulos Incluidos
+                  </div>
+                </motion.div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                   {/* Administrativos */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="rounded-2xl bg-[hsl(var(--sysde-red))] text-primary-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow"
+                    {...fade(0)}
+                    className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
                     onClick={() => setSelectedModule("clientes")}
                   >
-                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Administrativos</h4>
-                    <ol className="space-y-1.5 text-sm opacity-90">
-                      <li>1. Administración de Seguridad</li>
-                      <li>2. Políticas de Negocio</li>
-                      <li>3. Administración de Clientes</li>
-                      <li>4. Módulo de Contabilidad General</li>
-                      <li>5. Gestor de cobro</li>
-                    </ol>
+                    <div className="bg-[hsl(var(--sysde-red))] px-5 py-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
+                        <Settings2 className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Administrativos</h4>
+                    </div>
+                    <div className="p-5 space-y-2">
+                      {["Administración de Seguridad", "Políticas de Negocio", "Administración de Clientes", "Módulo de Contabilidad General", "Gestor de Cobro"].map((item, i) => (
+                        <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--sysde-red)/0.2)] transition-colors">
+                          <span className="w-6 h-6 rounded-full bg-[hsl(var(--sysde-red)/0.1)] text-[hsl(var(--sysde-red))] flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
+                          <span className="text-sm text-foreground font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </motion.div>
 
                   {/* Colocación */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="rounded-2xl bg-[hsl(var(--sysde-red))] text-primary-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow"
+                    {...fade(0.1)}
+                    className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
                     onClick={() => setSelectedModule("prestamos")}
                   >
-                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Colocación</h4>
-                    <ol className="space-y-1.5 text-sm opacity-90">
-                      <li>1. Administración de Préstamos</li>
-                      <li className="ml-4">a. Créditos</li>
-                      <li className="ml-4">b. Líneas de crédito</li>
-                    </ol>
+                    <div className="bg-[hsl(var(--flow-blue))] px-5 py-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
+                        <CreditCard className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Colocación</h4>
+                    </div>
+                    <div className="p-5 space-y-2">
+                      <div className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-blue)/0.2)] transition-colors">
+                        <span className="w-6 h-6 rounded-full bg-[hsl(var(--flow-blue)/0.1)] text-[hsl(var(--flow-blue))] flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                        <span className="text-sm text-foreground font-medium">Administración de Préstamos</span>
+                      </div>
+                      <div className="ml-9 space-y-1.5">
+                        {["Créditos", "Líneas de crédito"].map((sub, i) => (
+                          <div key={sub} className="flex items-center gap-2 py-1.5 px-3 rounded-lg bg-[hsl(var(--flow-blue)/0.05)] border border-[hsl(var(--flow-blue)/0.1)]">
+                            <span className="text-xs text-[hsl(var(--flow-blue))] font-semibold">{String.fromCharCode(97 + i)}.</span>
+                            <span className="text-sm text-muted-foreground">{sub}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </motion.div>
 
                   {/* Tesorería */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="rounded-2xl bg-muted text-foreground p-6 cursor-pointer hover:shadow-xl transition-shadow border border-border"
+                    {...fade(0.2)}
+                    className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
                     onClick={() => setSelectedModule("bancos")}
                   >
-                    <h4 className="font-bold text-lg mb-3 uppercase tracking-wide">Tesorería</h4>
-                    <ol className="space-y-1.5 text-sm text-muted-foreground">
-                      <li>1. Administración Bancos</li>
-                      <li>2. Administración de Cajas</li>
-                    </ol>
+                    <div className="bg-[hsl(var(--flow-green))] px-5 py-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
+                        <Building2 className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Tesorería</h4>
+                    </div>
+                    <div className="p-5 space-y-2">
+                      {["Administración Bancos", "Administración de Cajas"].map((item, i) => (
+                        <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-green)/0.2)] transition-colors">
+                          <span className="w-6 h-6 rounded-full bg-[hsl(var(--flow-green)/0.1)] text-[hsl(var(--flow-green))] flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
+                          <span className="text-sm text-foreground font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </motion.div>
                 </div>
               </div>
