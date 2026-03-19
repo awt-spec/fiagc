@@ -8,7 +8,7 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.5, delay },
 });
 
-const MONTHLY_YEAR1 = 999;
+const MONTHLY_YEAR1 = 1999;
 const INCREASE = 0.10;
 const MONTHLY_YEAR2 = MONTHLY_YEAR1 * (1 + INCREASE);
 
