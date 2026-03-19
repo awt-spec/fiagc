@@ -8,7 +8,7 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.5, delay },
 });
 
-const MONTHLY_YEAR1 = 999;
+const MONTHLY_YEAR1 = 1999;
 const INCREASE = 0.10;
 const MONTHLY_YEAR2 = MONTHLY_YEAR1 * (1 + INCREASE);
 
@@ -89,7 +89,7 @@ const EconomicProposal = () => {
                   Usuarios, empresas y créditos ilimitados + Core completo (8 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
-                  <span className="text-foreground font-bold text-xl">USD $999.00</span>
+                  <span className="text-foreground font-bold text-xl">USD $1,999.00</span>
                 </div>
               </div>
             </div>
