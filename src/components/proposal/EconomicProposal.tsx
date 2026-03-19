@@ -8,7 +8,7 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.5, delay },
 });
 
-const MONTHLY_YEAR1 = 1500;
+const MONTHLY_YEAR1 = 999;
 const INCREASE = 0.10;
 const MONTHLY_YEAR2 = MONTHLY_YEAR1 * (1 + INCREASE);
 
@@ -89,7 +89,7 @@ const EconomicProposal = () => {
                   Usuarios, empresas y créditos ilimitados + Core completo (8 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
-                  <span className="text-foreground font-bold text-xl">USD $1,500.00</span>
+                  <span className="text-foreground font-bold text-xl">USD $999.00</span>
                 </div>
               </div>
             </div>
@@ -191,6 +191,7 @@ const EconomicProposal = () => {
             </div>
             <div className="space-y-3">
               {[
+                { title: "Facturación Local", desc: "La facturación puede realizarse de forma local; únicamente se agrega el IVA correspondiente." },
                 { title: "Impuestos", desc: "Los precios no incluyen impuestos, tasas ni retenciones." },
                 { title: "Vigencia", desc: "Contrato mínimo de tres años para la renta del SAF+." },
                 { title: "Modificaciones", desc: "Se realizarán mediante orden de cambio con cotización independiente." },
