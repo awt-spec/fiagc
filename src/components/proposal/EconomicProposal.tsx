@@ -89,7 +89,7 @@ const EconomicProposal = () => {
                   Usuarios, empresas y créditos ilimitados + Core completo (8 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
-                  <span className="text-foreground font-bold text-xl">USD $1,500.00</span>
+                  <span className="text-foreground font-bold text-xl">USD $999.00</span>
                 </div>
               </div>
             </div>
