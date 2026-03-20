@@ -52,7 +52,7 @@ const EconomicProposal = () => {
                 { icon: CheckCircle2, text: "Infraestructura en la nube (Azure)" },
                 { icon: CheckCircle2, text: "Soporte y acompañamiento ilimitado" },
                 { icon: CheckCircle2, text: "Acceso web desde cualquier navegador" },
-                { icon: Landmark, text: "8 módulos financieros incluidos" },
+                { icon: Landmark, text: "4 módulos financieros incluidos" },
               ].map((item, i) => (
                 <motion.div
                   key={item.text}
