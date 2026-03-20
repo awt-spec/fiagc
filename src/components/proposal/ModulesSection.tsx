@@ -386,58 +386,50 @@ const ModulesSection = () => {
                   </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                  {/* Administrativos */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* 1. Parámetros y Seguridad */}
                   <motion.div
                     {...fade(0)}
                     className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
-                    onClick={() => setSelectedModule("clientes")}
+                    onClick={() => setSelectedModule("parametros")}
                   >
                     <div className="bg-[hsl(var(--sysde-red))] px-5 py-3 flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
-                        <Settings2 className="h-4 w-4 text-primary-foreground" />
+                        <Shield className="h-4 w-4 text-primary-foreground" />
                       </div>
-                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Administrativos</h4>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">1. Parámetros y Seguridad</h4>
                     </div>
                     <div className="p-5 space-y-2">
-                      {["Administración de Seguridad", "Políticas de Negocio", "Administración de Clientes", "Módulo de Contabilidad General", "Gestor de Cobro"].map((item, i) => (
+                      {["Usuarios y roles", "Permisos granulares", "Políticas de negocio", "Parámetros generales"].map((item, i) => (
                         <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--sysde-red)/0.2)] transition-colors">
-                          <span className="w-6 h-6 rounded-full bg-[hsl(var(--sysde-red)/0.1)] text-[hsl(var(--sysde-red))] flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
                           <span className="text-sm text-foreground font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                   </motion.div>
 
-                  {/* Colocación */}
+                  {/* 2. Clientes */}
                   <motion.div
                     {...fade(0.1)}
                     className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
-                    onClick={() => setSelectedModule("prestamos")}
+                    onClick={() => setSelectedModule("clientes")}
                   >
-                    <div className="bg-[hsl(var(--flow-blue))] px-5 py-3 flex items-center gap-3">
+                    <div className="bg-[hsl(var(--flow-purple))] px-5 py-3 flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
-                        <CreditCard className="h-4 w-4 text-primary-foreground" />
+                        <Users className="h-4 w-4 text-primary-foreground" />
                       </div>
-                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Colocación</h4>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">2. Clientes</h4>
                     </div>
                     <div className="p-5 space-y-2">
-                      <div className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-blue)/0.2)] transition-colors">
-                        <span className="w-6 h-6 rounded-full bg-[hsl(var(--flow-blue)/0.1)] text-[hsl(var(--flow-blue))] flex items-center justify-center text-xs font-bold shrink-0">1</span>
-                        <span className="text-sm text-foreground font-medium">Administración de Préstamos</span>
-                      </div>
-                      <div className="ml-9 space-y-1.5">
-                        {["Créditos", "Líneas de crédito"].map((sub, i) => (
-                          <div key={sub} className="flex items-center gap-2 py-1.5 px-3 rounded-lg bg-[hsl(var(--flow-blue)/0.05)] border border-[hsl(var(--flow-blue)/0.1)]">
-                            <span className="text-xs text-[hsl(var(--flow-blue))] font-semibold">{String.fromCharCode(97 + i)}.</span>
-                            <span className="text-sm text-muted-foreground">{sub}</span>
-                          </div>
-                        ))}
-                      </div>
+                      {["Personas físicas y jurídicas", "Cliente único", "Documentos digitales", "Información consolidada"].map((item, i) => (
+                        <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-purple)/0.2)] transition-colors">
+                          <span className="text-sm text-foreground font-medium">{item}</span>
+                        </div>
+                      ))}
                     </div>
                   </motion.div>
 
-                  {/* Tesorería */}
+                  {/* 3. Bancos y Contabilidad */}
                   <motion.div
                     {...fade(0.2)}
                     className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
@@ -447,19 +439,38 @@ const ModulesSection = () => {
                       <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
                         <Building2 className="h-4 w-4 text-primary-foreground" />
                       </div>
-                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Tesorería</h4>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">3. Bancos y Contabilidad</h4>
                     </div>
                     <div className="p-5 space-y-2">
-                      {["Administración Bancos", "Administración de Cajas"].map((item, i) => (
+                      {["Administración bancaria", "Contabilidad general", "Estados financieros", "Catálogo contable"].map((item, i) => (
                         <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-green)/0.2)] transition-colors">
-                          <span className="w-6 h-6 rounded-full bg-[hsl(var(--flow-green)/0.1)] text-[hsl(var(--flow-green))] flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
+                          <span className="text-sm text-foreground font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* 4. Préstamos Individuales y Microcrédito */}
+                  <motion.div
+                    {...fade(0.3)}
+                    className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    onClick={() => setSelectedModule("prestamos")}
+                  >
+                    <div className="bg-[hsl(var(--flow-blue))] px-5 py-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
+                        <CreditCard className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">4. Préstamos Individuales y Microcrédito</h4>
+                    </div>
+                    <div className="p-5 space-y-2">
+                      {["Créditos individuales", "Microcrédito", "Desembolsos", "Recuperación y cobranza"].map((item, i) => (
+                        <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-blue)/0.2)] transition-colors">
                           <span className="text-sm text-foreground font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                   </motion.div>
                 </div>
-              </div>
 
               {/* APIs Section - Interactive Tech Style */}
               <IntegrationsHub />

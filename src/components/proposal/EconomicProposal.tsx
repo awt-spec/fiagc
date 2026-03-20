@@ -86,7 +86,7 @@ const EconomicProposal = () => {
                   Suscripción Mensual
                 </div>
                 <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  Usuarios, empresas y créditos ilimitados + Core completo (8 módulos)
+                  Usuarios, empresas y créditos ilimitados + Core completo (4 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
                   <span className="text-foreground font-bold text-xl">USD $1,999.00</span>
