@@ -71,25 +71,15 @@ const ProposalHero = () => (
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="flex items-end justify-between gap-4"
+          className="text-sm"
         >
-          <p className="opacity-80 max-w-2xl leading-relaxed text-sm">
+          <p className="opacity-80 max-w-2xl leading-relaxed">
             Plataforma colaborativa de servicios financieros: Préstamos, Clientes, Cajas, Cuentas de Efectivo, Contabilidad, Bancos y más.
           </p>
-          <motion.button
-            onClick={handleFullscreen}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground text-sm font-medium backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors duration-200"
-          >
-            <Maximize2 className="h-4 w-4" />
-            Pantalla completa
-          </motion.button>
         </motion.div>
       </motion.div>
     </div>
   </section>
-  );
-};
+);
 
 export default ProposalHero;

@@ -76,6 +76,17 @@ const ProposalNav = () => {
                 {s.label}
               </button>
             ))}
+            <button
+              onClick={() => document.documentElement.requestFullscreen?.()}
+              className={`w-8 h-8 rounded-lg border flex items-center justify-center transition-all duration-200 active:scale-95 ${
+                scrolled
+                  ? "border-border bg-muted/50 text-muted-foreground hover:text-foreground hover:border-foreground/30"
+                  : "border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/20"
+              }`}
+              title="Pantalla completa"
+            >
+              <Maximize2 className="h-3.5 w-3.5" />
+            </button>
           </div>
         </div>
       </motion.nav>
