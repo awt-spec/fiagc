@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import { Maximize2 } from "lucide-react";
 
-const ProposalHero = () => (
+const ProposalHero = () => {
+  const handleFullscreen = () => {
+    document.documentElement.requestFullscreen?.();
+  };
+
+  return (
   <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-sysde text-primary-foreground overflow-hidden">
     <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-background" style={{ clipPath: "polygon(100% 0%, 100% 100%, 0% 100%)" }} />
 
@@ -71,15 +77,25 @@ const ProposalHero = () => (
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-sm"
+          className="flex items-end justify-between gap-4"
         >
-          <p className="opacity-80 max-w-2xl leading-relaxed">
+          <p className="opacity-80 max-w-2xl leading-relaxed text-sm">
             Plataforma colaborativa de servicios financieros: Préstamos, Clientes, Cajas, Cuentas de Efectivo, Contabilidad, Bancos y más.
           </p>
+          <motion.button
+            onClick={handleFullscreen}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground text-sm font-medium backdrop-blur-sm hover:bg-primary-foreground/20 transition-colors duration-200"
+          >
+            <Maximize2 className="h-4 w-4" />
+            Pantalla completa
+          </motion.button>
         </motion.div>
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default ProposalHero;
