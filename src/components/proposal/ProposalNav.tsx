@@ -18,6 +18,13 @@ const ProposalNav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(sections[0].href);
   const [onRedBg, setOnRedBg] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const onChange = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
