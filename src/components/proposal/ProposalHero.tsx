@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import { Maximize2 } from "lucide-react";
 
-const ProposalHero = () => (
+const ProposalHero = () => {
+  const handleFullscreen = () => {
+    document.documentElement.requestFullscreen?.();
+  };
+
+  return (
   <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-sysde text-primary-foreground overflow-hidden">
     <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-background" style={{ clipPath: "polygon(100% 0%, 100% 100%, 0% 100%)" }} />
 
