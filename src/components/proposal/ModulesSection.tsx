@@ -471,6 +471,7 @@ const ModulesSection = () => {
                     </div>
                   </motion.div>
                 </div>
+              </div>
 
               {/* APIs Section - Interactive Tech Style */}
               <IntegrationsHub />
