@@ -10,11 +10,10 @@ const fade = {
 
 const timelineRows = [
   { stage: "0", task: "Configuración de la instancia y ambiente", months: [true, false, false] },
-  { stage: "1", task: "Implementación módulos Seguridad y Clientes", months: [true, false, false] },
-  { stage: "2", task: "Implementación módulo Préstamos", months: [true, true, false] },
-  { stage: "3", task: "Implementación Cajas, Cuentas y Contabilidad", months: [false, true, false] },
-  { stage: "4", task: "Bancos, Depósitos a Plazo y Activos Fijos", months: [false, true, true] },
-  { stage: "5", task: "Capacitación y acompañamiento post-implementación", months: [false, false, true] },
+  { stage: "1", task: "Implementación módulos Parámetros, Seguridad y Clientes", months: [true, false, false] },
+  { stage: "2", task: "Implementación Bancos y Contabilidad", months: [true, true, false] },
+  { stage: "3", task: "Implementación Préstamos Individuales y Microcrédito", months: [false, true, true] },
+  { stage: "4", task: "Capacitación y acompañamiento post-implementación", months: [false, false, true] },
 ];
 
 const VisionAndTimeline = () => (
