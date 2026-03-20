@@ -67,16 +67,6 @@ const ProposalHero = () => (
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-sm"
-        >
-          <p className="opacity-80 max-w-2xl leading-relaxed">
-            Plataforma colaborativa de servicios financieros: Préstamos, Clientes, Cajas, Cuentas de Efectivo, Contabilidad, Bancos y más.
-          </p>
-        </motion.div>
       </motion.div>
     </div>
   </section>
