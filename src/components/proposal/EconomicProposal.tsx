@@ -24,7 +24,7 @@ const EconomicProposal = () => {
             Inversión Económica
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Modalidad SaaS (Software as a Service) que permite a FIAGC acceder al SAF+ Core Financiero a través de un navegador web.
+            Modalidad SaaS (Software as a Service) que permite a FIACG acceder al SAF+ Core Financiero a través de un navegador web.
           </p>
         </motion.div>
 

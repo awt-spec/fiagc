@@ -18,7 +18,7 @@ const specs = [
 const pillars = [
   { icon: Shield, title: "Seguridad", items: ["Cifrado en tránsito y reposo", "Control de acceso por roles", "Permisos granulares"], color: "flow-blue" },
   { icon: Zap, title: "Rendimiento", items: ["Transacciones de alta frecuencia", "Procesamiento optimizado", "Latencia mínima"], color: "flow-orange" },
-  { icon: ArrowUpRight, title: "Escalabilidad", items: ["Recursos ajustables", "Sin interrupciones", "Crece con FIAGC"], color: "flow-teal" },
+  { icon: ArrowUpRight, title: "Escalabilidad", items: ["Recursos ajustables", "Sin interrupciones", "Crece con FIACG"], color: "flow-teal" },
   { icon: Globe, title: "Disponibilidad", items: ["Acceso 24/7", "Sin infraestructura local", "Cualquier ubicación"], color: "flow-green" },
 ];
 
@@ -33,7 +33,7 @@ const BenefitsAndInfra = () => {
             Cloud dedicado en Azure
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            SAF+ opera sobre un servidor exclusivo para FIAGC en Microsoft Azure con respaldo, seguridad y rendimiento empresarial.
+            SAF+ opera sobre un servidor exclusivo para FIACG en Microsoft Azure con respaldo, seguridad y rendimiento empresarial.
           </p>
         </motion.div>
 
@@ -80,7 +80,7 @@ const BenefitsAndInfra = () => {
 
             <div className="mt-6 pt-4 border-t border-primary-foreground/10 flex items-center gap-2">
               <Cloud className="h-4 w-4 opacity-40" />
-              <span className="text-xs opacity-40">Instancia exclusiva FIAGC</span>
+              <span className="text-xs opacity-40">Instancia exclusiva FIACG</span>
             </div>
           </motion.div>
 

@@ -32,17 +32,17 @@ const VisionAndTimeline = () => (
           {
             icon: Rocket,
             title: "Time to Market",
-            desc: "Apoyar a FIAGC a modernizar su operación financiera en corto plazo, con una plataforma probada y adaptable a sus necesidades específicas.",
+            desc: "Apoyar a FIACG a modernizar su operación financiera en corto plazo, con una plataforma probada y adaptable a sus necesidades específicas.",
           },
           {
             icon: Target,
             title: "Foco en el Negocio",
-            desc: "Garantizar el Plan de Proyecto, permitiendo a FIAGC focalizarse en sus factores clave de negocio mientras SYSDE gestiona la solución tecnológica.",
+            desc: "Garantizar el Plan de Proyecto, permitiendo a FIACG focalizarse en sus factores clave de negocio mientras SYSDE gestiona la solución tecnológica.",
           },
           {
             icon: TrendingUp,
             title: "Crecimiento Eficiente",
-            desc: "Colaborar con FIAGC para soportar el crecimiento de su negocio a través de un core financiero robusto con flexibilidad para adaptar las reglas de negocio.",
+            desc: "Colaborar con FIACG para soportar el crecimiento de su negocio a través de un core financiero robusto con flexibilidad para adaptar las reglas de negocio.",
           },
         ].map((v, i) => (
           <motion.div

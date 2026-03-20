@@ -301,7 +301,7 @@ const integrations = [
   { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática para entes reguladores y auditorías.", category: "integraciones", color: "flow-green" },
   { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores y pasarelas para cobros en línea.", category: "integraciones", color: "flow-green" },
   { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para Power BI, Tableau y dashboards.", category: "integraciones", color: "flow-teal" },
-  { icon: Settings2, title: "Otros", desc: "Integraciones adicionales según necesidades específicas de FIAGC. Sujetas a análisis y cotización.", category: "integraciones", color: "sysde-blue" },
+  { icon: Settings2, title: "Otros", desc: "Integraciones adicionales según necesidades específicas de FIACG. Sujetas a análisis y cotización.", category: "integraciones", color: "sysde-blue" },
 ];
 
 const categories = [
@@ -448,7 +448,7 @@ const ModulesSection = () => {
                   Módulos a Rentar
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-3xl">
-                  Los módulos a ser implementados en FIAGC de la solución SYSDE SAF+, son los que a continuación se detallan.
+                  Los módulos a ser implementados en FIACG de la solución SYSDE SAF+, son los que a continuación se detallan.
                 </p>
               </motion.div>
 

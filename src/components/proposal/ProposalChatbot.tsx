@@ -10,7 +10,7 @@ const ProposalChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "¡Hola! 👋 Soy el asistente de esta propuesta. Pregúntame lo que quieras sobre el SAF+ Core Financiero de SYSDE para FIAGC.",
+      content: "¡Hola! 👋 Soy el asistente de esta propuesta. Pregúntame lo que quieras sobre el SAF+ Core Financiero de SYSDE para FIACG.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -80,7 +80,7 @@ const ProposalChatbot = () => {
                 <Bot className="w-5 h-5" />
                 <div>
                   <p className="text-sm font-semibold leading-tight">Asistente IA</p>
-                  <p className="text-[10px] opacity-80">SAF+ · FIAGC</p>
+                  <p className="text-[10px] opacity-80">SAF+ · FIACG</p>
                 </div>
               </div>
               <button onClick={() => setOpen(false)} className="hover:bg-white/20 rounded-full p-1 transition-colors">
