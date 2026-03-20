@@ -51,7 +51,8 @@ const EmbedSection = () => {
             className="w-full border-0"
             style={{ height: "80vh" }}
             title="Demo interactiva"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+            sandbox="allow-scripts allow-same-origin allow-popups"
           />
         </motion.div>
       </div>
