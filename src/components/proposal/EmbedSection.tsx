@@ -1,20 +1,6 @@
 import { motion } from "framer-motion";
-import { Maximize2, Minimize2 } from "lucide-react";
-import { useState, useRef } from "react";
 
 const EmbedSection = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const toggleFullscreen = () => {
-    if (!isFullscreen) {
-      containerRef.current?.requestFullscreen?.();
-    } else {
-      document.exitFullscreen?.();
-    }
-    setIsFullscreen(!isFullscreen);
-  };
-
   return (
     <section className="py-16 md:py-24 bg-muted/40">
       <div className="container px-6 max-w-6xl">
@@ -39,7 +25,6 @@ const EmbedSection = () => {
 
         {/* Embed container */}
         <motion.div
-          ref={containerRef}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -58,21 +43,13 @@ const EmbedSection = () => {
                 SAF+ — Demo Interactiva
               </span>
             </div>
-            <motion.button
-              onClick={toggleFullscreen}
-              whileTap={{ scale: 0.9 }}
-              className="w-8 h-8 rounded-lg bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-200"
-              title="Pantalla completa"
-            >
-              {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
-            </motion.button>
           </div>
 
           {/* Iframe */}
           <iframe
             src="https://learn-pages-spark.lovable.app"
             className="w-full border-0"
-            style={{ height: isFullscreen ? "calc(100vh - 44px)" : "80vh" }}
+            style={{ height: "80vh" }}
             title="Demo interactiva"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen"
           />
