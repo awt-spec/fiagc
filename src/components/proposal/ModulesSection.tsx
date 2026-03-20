@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
-  CreditCard, Users, Landmark, Wallet, Building2, BookOpen,
+  CreditCard, Users, Landmark, Building2,
   Shield, ArrowDown, Settings2, X, ArrowLeft,
   RefreshCw, DollarSign, Receipt, Banknote,
   FolderSearch, Code2, Globe, MonitorSmartphone, Puzzle,
