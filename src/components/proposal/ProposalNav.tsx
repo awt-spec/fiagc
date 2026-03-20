@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Maximize2 } from "lucide-react";
 import sysdeLogoColor from "@/assets/sysde-logo-color.png";
 import sysdeLogoWhite from "@/assets/sysde-logo-white.png";
 
