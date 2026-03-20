@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
-  CreditCard, Users, Landmark, Wallet, Building2, BookOpen,
+  CreditCard, Users, Landmark, Building2,
   Shield, ArrowDown, Settings2, X, ArrowLeft,
   RefreshCw, DollarSign, Receipt, Banknote,
   FolderSearch, Code2, Globe, MonitorSmartphone, Puzzle,
@@ -55,74 +55,23 @@ const BadgeTag = ({ label, color }: { label: string; color: string }) => (
 
 const modules = [
   {
-    id: "prestamos",
-    label: "Módulo de Préstamos",
-    icon: CreditCard,
-    summary: "Administración completa de créditos: consumo, comercial, hipotecario, nómina, puente y retail. Con manejo de desembolsos, refinanciamientos y recuperación.",
+    id: "parametros",
+    label: "Parámetros y Seguridad",
+    icon: Shield,
+    summary: "Configuración de parámetros generales del sistema, políticas de seguridad, gestión de usuarios, roles y permisos de acceso.",
     content: () => (
       <div className="max-w-xl mx-auto">
-        <h4 className="text-xl font-bold text-foreground text-center mb-1">Módulo de Préstamos</h4>
+        <h4 className="text-xl font-bold text-foreground text-center mb-1">Parámetros y Seguridad</h4>
         <div className="flex items-center justify-center gap-2 mb-8">
-          <BadgeTag label="Core Financiero" color="bg-[hsl(var(--flow-blue))]" />
+          <BadgeTag label="Core Financiero" color="bg-[hsl(var(--sysde-red))]" />
         </div>
-        <FlowCard color="blue">
-          <div className="flex items-center gap-2 mb-3">
-            <CreditCard className="h-5 w-5 text-[hsl(var(--flow-blue))]" />
-            <span className="font-bold text-sm text-foreground">Tipos de Crédito</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2 text-xs">
-            {["Consumo", "Comercial", "Hipotecario", "Nómina", "Puente", "Retail"].map((t) => (
-              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
-            ))}
-          </div>
-        </FlowCard>
-        <FlowArrow />
-        <FlowCard color="purple">
-          <div className="flex items-center gap-2 mb-3">
-            <Settings2 className="h-5 w-5 text-[hsl(var(--flow-purple))]" />
-            <span className="font-bold text-sm text-foreground">Configuración</span>
-          </div>
-          <div className="space-y-1.5">
-            {[
-              { label: "Tipo de crédito y variables financieras", c: "purple" as const },
-              { label: "Rubros y componentes de cuota", c: "blue" as const },
-              { label: "Configuración contable por rubro", c: "orange" as const },
-              { label: "IVA sobre intereses reales", c: "green" as const },
-            ].map((s) => {
-              const bc = {
-                purple: "border-[hsl(var(--flow-purple)/0.3)] bg-[hsl(var(--flow-purple-light))]",
-                blue: "border-[hsl(var(--flow-blue)/0.3)] bg-[hsl(var(--flow-blue-light))]",
-                orange: "border-[hsl(var(--flow-orange)/0.3)] bg-[hsl(var(--flow-orange-light))]",
-                green: "border-[hsl(var(--flow-green)/0.3)] bg-[hsl(var(--flow-green-light))]",
-              };
-              return (
-                <div key={s.label} className={`flex items-center text-xs px-3 py-2 rounded-lg border ${bc[s.c]}`}>
-                  <span className="text-foreground font-medium">{s.label}</span>
-                </div>
-              );
-            })}
-          </div>
-        </FlowCard>
-        <FlowArrow />
         <FlowCard color="orange">
           <div className="flex items-center gap-2 mb-3">
-            <Receipt className="h-5 w-5 text-[hsl(var(--flow-orange))]" />
-            <span className="font-bold text-sm text-foreground">Funcionalidades Clave</span>
+            <Shield className="h-5 w-5 text-[hsl(var(--flow-orange))]" />
+            <span className="font-bold text-sm text-foreground">Administración del Sistema</span>
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Desembolso con fecha valor", "Cuentas referenciadas", "Posposición de cuotas", "Grupo interés económico", "Refinanciamientos", "Carga de documentos"].map((t) => (
-              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
-            ))}
-          </div>
-        </FlowCard>
-        <FlowArrow />
-        <FlowCard color="green">
-          <div className="flex items-center gap-2 mb-3">
-            <Banknote className="h-5 w-5 text-[hsl(var(--flow-green))]" />
-            <span className="font-bold text-sm text-foreground">Recuperación de Créditos</span>
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Carga masiva de pagos", "Pagos con fecha valor", "Saldo a favor", "No identificados", "Pago de nómina", "Cobranza"].map((t) => (
+            {["Usuarios y roles", "Permisos granulares", "Políticas de negocio", "Parámetros generales", "Auditoría de accesos", "Configuración global"].map((t) => (
               <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
             ))}
           </div>
@@ -132,7 +81,7 @@ const modules = [
   },
   {
     id: "clientes",
-    label: "Módulo de Clientes",
+    label: "Clientes",
     icon: Users,
     summary: "Gestión centralizada de personas físicas y jurídicas. Información consolidada del cliente con documentación digital y asignación de cliente único.",
     content: () => (
@@ -169,80 +118,15 @@ const modules = [
     ),
   },
   {
-    id: "contabilidad",
-    label: "Módulo de Contabilidad",
-    icon: Landmark,
-    summary: "Registro contable automático producto de la gestión financiera. Generación de estados financieros, catálogo contable y envío de información a terceros.",
+    id: "bancos",
+    label: "Bancos y Contabilidad",
+    icon: Building2,
+    summary: "Administración de cuentas bancarias, registro contable automático, estados financieros, catálogo contable y control de tesorería.",
     content: () => (
       <div className="max-w-xl mx-auto">
-        <h4 className="text-xl font-bold text-foreground text-center mb-1">Módulo de Contabilidad</h4>
+        <h4 className="text-xl font-bold text-foreground text-center mb-1">Bancos y Contabilidad</h4>
         <div className="flex items-center justify-center gap-2 mb-8">
           <BadgeTag label="Core Financiero" color="bg-[hsl(var(--flow-green))]" />
-        </div>
-        <FlowCard color="green">
-          <div className="flex items-center gap-2 mb-3">
-            <Landmark className="h-5 w-5 text-[hsl(var(--flow-green))]" />
-            <span className="font-bold text-sm text-foreground">Contabilidad Automatizada</span>
-          </div>
-          <p className="text-xs text-muted-foreground mb-3">
-            Registra datos contables automáticamente producto de la gestión financiera y operativa de cada módulo del SAF+.
-          </p>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Catálogo contable", "Estados financieros", "Asientos automáticos", "Asientos manuales", "Interfaz con módulos", "Envío a terceros", "Consultas y saldos", "Administración por rol"].map((t) => (
-              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
-            ))}
-          </div>
-        </FlowCard>
-      </div>
-    ),
-  },
-  {
-    id: "cajas",
-    label: "Cajas y Cuentas",
-    icon: Wallet,
-    summary: "Control de transacciones de caja, depósitos, retiros, cuentas de ahorro y corriente, sobregiros, chequeras y más.",
-    content: () => (
-      <div className="max-w-xl mx-auto">
-        <h4 className="text-xl font-bold text-foreground text-center mb-1">Cajas y Cuentas de Efectivo</h4>
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <BadgeTag label="Core Financiero" color="bg-[hsl(var(--flow-orange))]" />
-        </div>
-        <FlowCard color="orange">
-          <div className="flex items-center gap-2 mb-3">
-            <Wallet className="h-5 w-5 text-[hsl(var(--flow-orange))]" />
-            <span className="font-bold text-sm text-foreground">Operaciones de Caja</span>
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Depósitos y retiros", "Control de denominación", "Cambios de cheques", "Compra/venta divisas", "Pago depósitos a plazo", "Recolección servicios", "Anulación/reversa", "Reportes de control"].map((t) => (
-              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
-            ))}
-          </div>
-        </FlowCard>
-        <FlowArrow />
-        <FlowCard color="teal">
-          <div className="flex items-center gap-2 mb-3">
-            <Banknote className="h-5 w-5 text-[hsl(var(--flow-teal))]" />
-            <span className="font-bold text-sm text-foreground">Cuentas de Efectivo</span>
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Tipos de saldo", "Sobregiros", "Chequeras", "Registro de cuentas", "Pago intereses a socios", "Transferencias", "Notas crédito/débito", "Cierre diario"].map((t) => (
-              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
-            ))}
-          </div>
-        </FlowCard>
-      </div>
-    ),
-  },
-  {
-    id: "bancos",
-    label: "Bancos y Tesorería",
-    icon: Building2,
-    summary: "Administración de cuentas bancarias, emisión de cheques, transferencias, control de ingresos y egresos.",
-    content: () => (
-      <div className="max-w-xl mx-auto">
-        <h4 className="text-xl font-bold text-foreground text-center mb-1">Módulo de Bancos / Tesorería</h4>
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <BadgeTag label="Core Financiero" color="bg-[hsl(var(--flow-blue))]" />
         </div>
         <FlowCard color="blue">
           <div className="flex items-center gap-2 mb-3">
@@ -250,7 +134,19 @@ const modules = [
             <span className="font-bold text-sm text-foreground">Administración Bancaria</span>
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Cuentas centralizadas", "Emisión de cheques", "Reimpresión cheques", "Transferencias propias", "Transferencias terceros", "Control ingresos/egresos", "Saldos de cuentas", "Diarios e históricos"].map((t) => (
+            {["Cuentas centralizadas", "Emisión de cheques", "Transferencias", "Control ingresos/egresos", "Saldos de cuentas", "Diarios e históricos"].map((t) => (
+              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
+            ))}
+          </div>
+        </FlowCard>
+        <FlowArrow />
+        <FlowCard color="green">
+          <div className="flex items-center gap-2 mb-3">
+            <Landmark className="h-5 w-5 text-[hsl(var(--flow-green))]" />
+            <span className="font-bold text-sm text-foreground">Contabilidad General</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            {["Catálogo contable", "Estados financieros", "Asientos automáticos", "Asientos manuales", "Envío a terceros", "Consultas y saldos"].map((t) => (
               <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
             ))}
           </div>
@@ -259,26 +155,49 @@ const modules = [
     ),
   },
   {
-    id: "depositos",
-    label: "Depósitos a Plazo",
-    icon: BookOpen,
-    summary: "Gestión eficiente de depósitos a plazo: renovación automática, cancelación anticipada, múltiples beneficiarios y cupones.",
+    id: "prestamos",
+    label: "Préstamos Individuales y Microcrédito",
+    icon: CreditCard,
+    summary: "Administración completa de créditos individuales y microcrédito: desembolsos, refinanciamientos, recuperación y cobranza.",
     content: () => (
       <div className="max-w-xl mx-auto">
-        <h4 className="text-xl font-bold text-foreground text-center mb-1">Depósitos a Plazo</h4>
+        <h4 className="text-xl font-bold text-foreground text-center mb-1">Préstamos Individuales y Microcrédito</h4>
         <div className="flex items-center justify-center gap-2 mb-8">
-          <BadgeTag label="Core Financiero" color="bg-[hsl(var(--flow-purple))]" />
+          <BadgeTag label="Core Financiero" color="bg-[hsl(var(--flow-blue))]" />
         </div>
+        <FlowCard color="blue">
+          <div className="flex items-center gap-2 mb-3">
+            <CreditCard className="h-5 w-5 text-[hsl(var(--flow-blue))]" />
+            <span className="font-bold text-sm text-foreground">Tipos de Crédito</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            {["Individual", "Microcrédito", "Consumo", "Comercial", "Nómina", "Líneas de crédito"].map((t) => (
+              <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
+            ))}
+          </div>
+        </FlowCard>
+        <FlowArrow />
         <FlowCard color="purple">
           <div className="flex items-center gap-2 mb-3">
-            <BookOpen className="h-5 w-5 text-[hsl(var(--flow-purple))]" />
-            <span className="font-bold text-sm text-foreground">Gestión de Depósitos</span>
+            <Settings2 className="h-5 w-5 text-[hsl(var(--flow-purple))]" />
+            <span className="font-bold text-sm text-foreground">Configuración</span>
           </div>
-          <p className="text-xs text-muted-foreground mb-3">
-            Administración eficiente que fortalece la confianza de los clientes inversionistas.
-          </p>
+          <div className="space-y-1.5">
+            {["Tipo de crédito y variables financieras", "Rubros y componentes de cuota", "Configuración contable por rubro", "IVA sobre intereses reales"].map((s) => (
+              <div key={s} className="flex items-center text-xs px-3 py-2 rounded-lg border border-[hsl(var(--flow-purple)/0.3)] bg-[hsl(var(--flow-purple-light))]">
+                <span className="text-foreground font-medium">{s}</span>
+              </div>
+            ))}
+          </div>
+        </FlowCard>
+        <FlowArrow />
+        <FlowCard color="green">
+          <div className="flex items-center gap-2 mb-3">
+            <Banknote className="h-5 w-5 text-[hsl(var(--flow-green))]" />
+            <span className="font-bold text-sm text-foreground">Recuperación de Créditos</span>
+          </div>
           <div className="grid grid-cols-2 gap-2 text-xs">
-            {["Renovación automática", "Cancelación anticipada", "Múltiples beneficiarios", "Administración por carteras", "Sustitución de depósitos", "Flujos de caja"].map((t) => (
+            {["Carga masiva de pagos", "Pagos con fecha valor", "Saldo a favor", "Cobranza", "Pago de nómina", "Refinanciamientos"].map((t) => (
               <span key={t} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center text-muted-foreground">{t}</span>
             ))}
           </div>
@@ -301,7 +220,7 @@ const integrations = [
   { icon: FileText, title: "Reportes Regulatorios", desc: "Generación automática para entes reguladores y auditorías.", category: "integraciones", color: "flow-green" },
   { icon: Link2, title: "Pasarelas de Pago", desc: "Integración con procesadores y pasarelas para cobros en línea.", category: "integraciones", color: "flow-green" },
   { icon: BarChart3, title: "Business Intelligence", desc: "Extracción de datos para Power BI, Tableau y dashboards.", category: "integraciones", color: "flow-teal" },
-  { icon: Settings2, title: "Otros", desc: "Integraciones adicionales según necesidades específicas de FIAGC. Sujetas a análisis y cotización.", category: "integraciones", color: "sysde-blue" },
+  { icon: Settings2, title: "Otros", desc: "Integraciones adicionales según necesidades específicas de FIACG. Sujetas a análisis y cotización.", category: "integraciones", color: "sysde-blue" },
 ];
 
 const categories = [
@@ -448,7 +367,7 @@ const ModulesSection = () => {
                   Módulos a Rentar
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-3xl">
-                  Los módulos a ser implementados en FIAGC de la solución SYSDE SAF+, son los que a continuación se detallan.
+                  Los módulos a ser implementados en FIACG de la solución SYSDE SAF+, son los que a continuación se detallan.
                 </p>
               </motion.div>
 
@@ -467,58 +386,50 @@ const ModulesSection = () => {
                   </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                  {/* Administrativos */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* 1. Parámetros y Seguridad */}
                   <motion.div
                     {...fade(0)}
                     className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
-                    onClick={() => setSelectedModule("clientes")}
+                    onClick={() => setSelectedModule("parametros")}
                   >
                     <div className="bg-[hsl(var(--sysde-red))] px-5 py-3 flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
-                        <Settings2 className="h-4 w-4 text-primary-foreground" />
+                        <Shield className="h-4 w-4 text-primary-foreground" />
                       </div>
-                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Administrativos</h4>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">1. Parámetros y Seguridad</h4>
                     </div>
                     <div className="p-5 space-y-2">
-                      {["Administración de Seguridad", "Políticas de Negocio", "Administración de Clientes", "Módulo de Contabilidad General", "Gestor de Cobro"].map((item, i) => (
+                      {["Usuarios y roles", "Permisos granulares", "Políticas de negocio", "Parámetros generales"].map((item, i) => (
                         <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--sysde-red)/0.2)] transition-colors">
-                          <span className="w-6 h-6 rounded-full bg-[hsl(var(--sysde-red)/0.1)] text-[hsl(var(--sysde-red))] flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
                           <span className="text-sm text-foreground font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                   </motion.div>
 
-                  {/* Colocación */}
+                  {/* 2. Clientes */}
                   <motion.div
                     {...fade(0.1)}
                     className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
-                    onClick={() => setSelectedModule("prestamos")}
+                    onClick={() => setSelectedModule("clientes")}
                   >
-                    <div className="bg-[hsl(var(--flow-blue))] px-5 py-3 flex items-center gap-3">
+                    <div className="bg-[hsl(var(--flow-purple))] px-5 py-3 flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
-                        <CreditCard className="h-4 w-4 text-primary-foreground" />
+                        <Users className="h-4 w-4 text-primary-foreground" />
                       </div>
-                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Colocación</h4>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">2. Clientes</h4>
                     </div>
                     <div className="p-5 space-y-2">
-                      <div className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-blue)/0.2)] transition-colors">
-                        <span className="w-6 h-6 rounded-full bg-[hsl(var(--flow-blue)/0.1)] text-[hsl(var(--flow-blue))] flex items-center justify-center text-xs font-bold shrink-0">1</span>
-                        <span className="text-sm text-foreground font-medium">Administración de Préstamos</span>
-                      </div>
-                      <div className="ml-9 space-y-1.5">
-                        {["Créditos", "Líneas de crédito"].map((sub, i) => (
-                          <div key={sub} className="flex items-center gap-2 py-1.5 px-3 rounded-lg bg-[hsl(var(--flow-blue)/0.05)] border border-[hsl(var(--flow-blue)/0.1)]">
-                            <span className="text-xs text-[hsl(var(--flow-blue))] font-semibold">{String.fromCharCode(97 + i)}.</span>
-                            <span className="text-sm text-muted-foreground">{sub}</span>
-                          </div>
-                        ))}
-                      </div>
+                      {["Personas físicas y jurídicas", "Cliente único", "Documentos digitales", "Información consolidada"].map((item, i) => (
+                        <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-purple)/0.2)] transition-colors">
+                          <span className="text-sm text-foreground font-medium">{item}</span>
+                        </div>
+                      ))}
                     </div>
                   </motion.div>
 
-                  {/* Tesorería */}
+                  {/* 3. Bancos y Contabilidad */}
                   <motion.div
                     {...fade(0.2)}
                     className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
@@ -528,12 +439,32 @@ const ModulesSection = () => {
                       <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
                         <Building2 className="h-4 w-4 text-primary-foreground" />
                       </div>
-                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">Tesorería</h4>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">3. Bancos y Contabilidad</h4>
                     </div>
                     <div className="p-5 space-y-2">
-                      {["Administración Bancos", "Administración de Cajas"].map((item, i) => (
+                      {["Administración bancaria", "Contabilidad general", "Estados financieros", "Catálogo contable"].map((item, i) => (
                         <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-green)/0.2)] transition-colors">
-                          <span className="w-6 h-6 rounded-full bg-[hsl(var(--flow-green)/0.1)] text-[hsl(var(--flow-green))] flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
+                          <span className="text-sm text-foreground font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* 4. Préstamos Individuales y Microcrédito */}
+                  <motion.div
+                    {...fade(0.3)}
+                    className="group rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    onClick={() => setSelectedModule("prestamos")}
+                  >
+                    <div className="bg-[hsl(var(--flow-blue))] px-5 py-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-primary-foreground/20 flex items-center justify-center">
+                        <CreditCard className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <h4 className="font-bold text-primary-foreground uppercase tracking-wide text-sm">4. Préstamos Individuales y Microcrédito</h4>
+                    </div>
+                    <div className="p-5 space-y-2">
+                      {["Créditos individuales", "Microcrédito", "Desembolsos", "Recuperación y cobranza"].map((item, i) => (
+                        <div key={item} className="flex items-center gap-3 py-2 px-3 rounded-lg bg-muted/50 border border-border/50 group-hover:border-[hsl(var(--flow-blue)/0.2)] transition-colors">
                           <span className="text-sm text-foreground font-medium">{item}</span>
                         </div>
                       ))}

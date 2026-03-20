@@ -6,15 +6,15 @@ const corsHeaders = {
 };
 
 const documentContent = `
-# SAF+ Core de Servicios Financieros — Propuesta para FIAGC
+# SAF+ Core de Servicios Financieros — Propuesta para FIACG
 
 ## Información Principal:
-- **Cliente**: FIAGC
+- **Cliente**: FIACG
 - **Solución**: SAF+ Core de Servicios Financieros Colaborativos
 - **Empresa**: SYSDE
 
 ## Plataforma SAF+:
-SYSDE ofrece a FIAGC su plataforma colaborativa SAF+ para la administración integral de servicios financieros. Una solución robusta, moderna y 100% web.
+SYSDE ofrece a FIACG su plataforma colaborativa SAF+ para la administración integral de servicios financieros. Una solución robusta, moderna y 100% web.
 
 ### Módulos incluidos:
 
@@ -134,7 +134,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `Eres un asistente especializado en la propuesta del SAF+ Core de Servicios Financieros de SYSDE para FIAGC. Responde preguntas sobre esta propuesta de manera clara, profesional y útil.
+    const systemPrompt = `Eres un asistente especializado en la propuesta del SAF+ Core de Servicios Financieros de SYSDE para FIACG. Responde preguntas sobre esta propuesta de manera clara, profesional y útil.
 
 INFORMACIÓN DEL DOCUMENTO:
 ${documentContent}

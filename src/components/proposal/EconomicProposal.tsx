@@ -24,7 +24,7 @@ const EconomicProposal = () => {
             Inversión Económica
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Modalidad SaaS (Software as a Service) que permite a FIAGC acceder al SAF+ Core Financiero a través de un navegador web.
+            Modalidad SaaS (Software as a Service) que permite a FIACG acceder al SAF+ Core Financiero a través de un navegador web.
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ const EconomicProposal = () => {
                 { icon: CheckCircle2, text: "Infraestructura en la nube (Azure)" },
                 { icon: CheckCircle2, text: "Soporte y acompañamiento ilimitado" },
                 { icon: CheckCircle2, text: "Acceso web desde cualquier navegador" },
-                { icon: Landmark, text: "8 módulos financieros incluidos" },
+                { icon: Landmark, text: "4 módulos financieros incluidos" },
               ].map((item, i) => (
                 <motion.div
                   key={item.text}
@@ -86,7 +86,7 @@ const EconomicProposal = () => {
                   Suscripción Mensual
                 </div>
                 <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
-                  Usuarios, empresas y créditos ilimitados + Core completo (8 módulos)
+                  Usuarios, empresas y créditos ilimitados + Core completo (4 módulos)
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
                   <span className="text-foreground font-bold text-xl">USD $1,999.00</span>
