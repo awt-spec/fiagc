@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Maximize2 } from "lucide-react";
+import { Maximize2, Minimize2 } from "lucide-react";
 import sysdeLogoColor from "@/assets/sysde-logo-color.png";
 import sysdeLogoWhite from "@/assets/sysde-logo-white.png";
 
@@ -18,6 +18,13 @@ const ProposalNav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(sections[0].href);
   const [onRedBg, setOnRedBg] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const onChange = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -77,15 +84,21 @@ const ProposalNav = () => {
               </button>
             ))}
             <button
-              onClick={() => document.documentElement.requestFullscreen?.()}
+              onClick={() => {
+                if (isFullscreen) {
+                  document.exitFullscreen?.();
+                } else {
+                  document.documentElement.requestFullscreen?.();
+                }
+              }}
               className={`w-8 h-8 rounded-lg border flex items-center justify-center transition-all duration-200 active:scale-95 ${
                 scrolled
                   ? "border-border bg-muted/50 text-muted-foreground hover:text-foreground hover:border-foreground/30"
                   : "border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/20"
               }`}
-              title="Pantalla completa"
+              title={isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
             >
-              <Maximize2 className="h-3.5 w-3.5" />
+              {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
             </button>
           </div>
         </div>
