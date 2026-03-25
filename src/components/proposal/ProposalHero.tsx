@@ -63,7 +63,7 @@ const ProposalHero = () => (
           <div className="w-px bg-primary-foreground/20 hidden sm:block" />
           <div>
             <span className="text-sm opacity-70 block mb-1">Fecha:</span>
-            <span className="font-bold text-lg">17 / marzo / 2026</span>
+            <span className="font-bold text-lg">25 / marzo / 2026</span>
           </div>
         </motion.div>
 
