@@ -191,10 +191,8 @@ const EconomicProposal = () => {
             </div>
             <div className="space-y-3">
               {[
-                { title: "Facturación Local", desc: "La facturación puede realizarse de forma local; únicamente se agrega el IVA correspondiente." },
-                { title: "Impuestos", desc: "Los precios no incluyen impuestos, tasas ni retenciones." },
+                { title: "Facturación Local", desc: "La facturación se realiza de forma local; únicamente se agrega el IVA correspondiente." },
                 { title: "Vigencia", desc: "Contrato mínimo de tres años para la renta del SAF+." },
-                { title: "Modificaciones", desc: "Se realizarán mediante orden de cambio con cotización independiente." },
                 { title: "Viáticos", desc: "Gastos de viaje no incluidos; deben indicarse en negociación." },
                 { title: "Validez", desc: "Esta propuesta anula cualquier otra entregada anteriormente." },
               ].map((item, i) => (
