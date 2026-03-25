@@ -193,7 +193,7 @@ const EconomicProposal = () => {
               {[
                 { title: "Facturación Local", desc: "La facturación se realiza de forma local; únicamente se agrega el IVA correspondiente." },
                 { title: "Vigencia", desc: "Contrato mínimo de tres años para la renta del SAF+." },
-                { title: "Viáticos", desc: "Gastos de viaje no incluidos; deben indicarse en negociación." },
+                
                 { title: "Validez", desc: "Esta propuesta anula cualquier otra entregada anteriormente." },
               ].map((item, i) => (
                 <motion.div

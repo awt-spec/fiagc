@@ -112,6 +112,46 @@ const BenefitsAndInfra = () => {
           </div>
         </div>
 
+        {/* Notificaciones y APIs */}
+        <motion.div {...fade} className="mt-10">
+          <div className="p-7 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-11 h-11 rounded-xl bg-[hsl(var(--flow-teal-light))] flex items-center justify-center">
+                <Globe className="h-5 w-5 text-[hsl(var(--flow-teal))]" />
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground text-lg">Notificaciones y APIs</h4>
+                <p className="text-sm text-muted-foreground">Integraciones disponibles para comunicación automatizada</p>
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { name: "WhatsApp", desc: "Notificaciones y alertas vía WhatsApp Business API" },
+                { name: "SMS", desc: "Mensajes de texto para confirmaciones y alertas" },
+                { name: "Email", desc: "Correos electrónicos transaccionales y reportes" },
+                { name: "Telegram", desc: "Notificaciones en tiempo real vía bot de Telegram" },
+                { name: "Webhooks", desc: "Integración con sistemas externos vía HTTP" },
+                { name: "API REST", desc: "API abierta para integraciones personalizadas" },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.06 }}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-muted/50"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-[hsl(var(--flow-teal))] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{item.name}</p>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
