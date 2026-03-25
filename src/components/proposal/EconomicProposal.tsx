@@ -96,7 +96,7 @@ const EconomicProposal = () => {
           </div>
           <div className="flex items-center justify-center gap-2 mt-3 text-xs text-muted-foreground">
             <TrendingUp className="h-3.5 w-3.5 text-sysde-red" />
-            <span>Aumento del 10% anual sobre la suscripción mensual</span>
+            <span>Aumento del 3% anual sobre la suscripción mensual</span>
           </div>
         </motion.div>
 
