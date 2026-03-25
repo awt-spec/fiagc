@@ -129,7 +129,7 @@ const EconomicProposal = () => {
             {/* Year 2 */}
             <div className="overflow-hidden rounded-2xl border border-border bg-card">
               <div className="bg-sysde-red text-primary-foreground px-5 py-3 flex items-center justify-between">
-                <span className="font-semibold text-sm">Año 2 <span className="text-xs opacity-80 ml-1">(+10%)</span></span>
+                <span className="font-semibold text-sm">Año 2 <span className="text-xs opacity-80 ml-1">(+3%)</span></span>
                 <span className="text-xs opacity-80">USD ${MONTHLY_YEAR2.toLocaleString("en-US", { minimumFractionDigits: 2 })} / mes</span>
               </div>
               <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 divide-x divide-y divide-border">
