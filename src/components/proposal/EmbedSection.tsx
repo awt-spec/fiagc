@@ -47,7 +47,7 @@ const EmbedSection = () => {
 
           {/* Iframe */}
           <iframe
-            src="https://learn-pages-spark.lovable.app?v=20260320"
+            src={`https://learn-pages-spark.lovable.app?v=${Date.now()}`}
             className="w-full border-0"
             style={{ height: "80vh" }}
             title="Demo interactiva"
