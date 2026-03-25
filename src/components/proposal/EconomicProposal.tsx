@@ -9,7 +9,7 @@ const fade = (delay = 0) => ({
 });
 
 const MONTHLY_YEAR1 = 1999;
-const INCREASE = 0.10;
+const INCREASE = 0.03;
 const MONTHLY_YEAR2 = MONTHLY_YEAR1 * (1 + INCREASE);
 
 const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
