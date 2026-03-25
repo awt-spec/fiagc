@@ -9,7 +9,7 @@ const fade = (delay = 0) => ({
 });
 
 const MONTHLY_YEAR1 = 1999;
-const INCREASE = 0.10;
+const INCREASE = 0.03;
 const MONTHLY_YEAR2 = MONTHLY_YEAR1 * (1 + INCREASE);
 
 const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
@@ -96,7 +96,7 @@ const EconomicProposal = () => {
           </div>
           <div className="flex items-center justify-center gap-2 mt-3 text-xs text-muted-foreground">
             <TrendingUp className="h-3.5 w-3.5 text-sysde-red" />
-            <span>Aumento del 10% anual sobre la suscripción mensual</span>
+            <span>Aumento del 3% anual sobre la suscripción mensual</span>
           </div>
         </motion.div>
 
@@ -129,7 +129,7 @@ const EconomicProposal = () => {
             {/* Year 2 */}
             <div className="overflow-hidden rounded-2xl border border-border bg-card">
               <div className="bg-sysde-red text-primary-foreground px-5 py-3 flex items-center justify-between">
-                <span className="font-semibold text-sm">Año 2 <span className="text-xs opacity-80 ml-1">(+10%)</span></span>
+                <span className="font-semibold text-sm">Año 2 <span className="text-xs opacity-80 ml-1">(+3%)</span></span>
                 <span className="text-xs opacity-80">USD ${MONTHLY_YEAR2.toLocaleString("en-US", { minimumFractionDigits: 2 })} / mes</span>
               </div>
               <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 divide-x divide-y divide-border">
@@ -191,10 +191,8 @@ const EconomicProposal = () => {
             </div>
             <div className="space-y-3">
               {[
-                { title: "Facturación Local", desc: "La facturación puede realizarse de forma local; únicamente se agrega el IVA correspondiente." },
-                { title: "Impuestos", desc: "Los precios no incluyen impuestos, tasas ni retenciones." },
+                { title: "Facturación Local", desc: "La facturación se realiza de forma local; únicamente se agrega el IVA correspondiente." },
                 { title: "Vigencia", desc: "Contrato mínimo de tres años para la renta del SAF+." },
-                { title: "Modificaciones", desc: "Se realizarán mediante orden de cambio con cotización independiente." },
                 { title: "Viáticos", desc: "Gastos de viaje no incluidos; deben indicarse en negociación." },
                 { title: "Validez", desc: "Esta propuesta anula cualquier otra entregada anteriormente." },
               ].map((item, i) => (
