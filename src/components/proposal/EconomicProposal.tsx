@@ -80,7 +80,7 @@ const EconomicProposal = () => {
                 <div className="px-4 py-4 font-semibold">Precio USD</div>
               </div>
             </div>
-            <div>
+            <div className="divide-y divide-border">
               <div className="grid grid-cols-3 text-center">
                 <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
                   Suscripción Mensual
@@ -90,6 +90,17 @@ const EconomicProposal = () => {
                 </div>
                 <div className="px-4 py-4 flex items-center justify-center">
                   <span className="text-foreground font-bold text-xl">USD $1,999.00</span>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 text-center">
+                <div className="px-4 py-4 text-foreground font-medium border-r border-border flex items-center justify-center">
+                  Migración de Datos
+                </div>
+                <div className="px-4 py-4 text-sm text-muted-foreground border-r border-border flex items-center justify-center">
+                  Servicio único de migración de información al SAF+ Core Financiero
+                </div>
+                <div className="px-4 py-4 flex items-center justify-center">
+                  <span className="text-foreground font-bold text-xl">220 horas</span>
                 </div>
               </div>
             </div>
